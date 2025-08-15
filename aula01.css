@@ -1,0 +1,42 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  display: grid;
+  place-items: center;   /* centraliza vertical e horizontalmente o conteúdo */
+  padding: 24px;
+}
+
+p {
+  text-align: center;    /* centraliza o texto */
+  max-width: 900px;      /* limita largura para melhor leitura */
+  margin: 0;
+  font-size: 1.05rem;
+}
+@media (max-width: 600px) {
+  body {
+    padding: 16px;
+  }
+
+  p {
+    font-size: 0.95rem; /* Texto um pouco menor para caber melhor */
+    line-height: 1.4;   /* Espaçamento mais compacto */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
