@@ -14,7 +14,7 @@ body {
 }
 
 p {
-  text-align: center;    /* centraliza o texto */
+   /* centraliza o texto */
   max-width: 900px;      /* limita largura para melhor leitura */
   margin: 0;
   font-size: 1.05rem;
