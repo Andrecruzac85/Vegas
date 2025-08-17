@@ -1,12 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./aula01.css">
     <title>Document</title>
 </head>
+
 <body>
     
+    <h1>PROGRAMAÇÃO Active20 JFL</h1><br>
+   <p class="aula">
+  <strong>PROGRAMAÇÃO DAS ZONAS</strong><br><br>
+  001 a 099 – Tipo da zona<br>
+  &nbsp;&nbsp;00 — Desabilitada<br>
+  &nbsp;&nbsp;10 — Imediata<br>
+  &nbsp;&nbsp;11 — Tempo de entrada e saída 1<br>
+  &nbsp;&nbsp;12 — Tempo de entrada e saída 2<br>
+  &nbsp;&nbsp;13 — Seguidora<br>
+  &nbsp;&nbsp;14 — 24 Horas<br>
+  &nbsp;&nbsp;15 — Ronda<br>
+  &nbsp;&nbsp;16 — 24H pânico<br>
+  &nbsp;&nbsp;19 — 24 horas tamper<br>
+  100xx – Número da partição da zona — Padrão: 01<br>
+  101 a 199 – Programação dos atributos da zona<br><br>
+
+  <em>ARM A</em><br>
+  TECLA1 — Partição A<br>
+  TECLA2 — Partição B<br>
+  TECLA3 — Partição C<br>
+  TECLA4 — Partição D<br>
+  TECLA5 — STAY<br>
+  TECLA6 — Inteligente<br>
+  TECLA7 — Silenciosa<br>
+  TECLA8 — Auto anulável<br>
+  TECLA9 — Permite inibir<br><br>
+
+  <em>ARM B</em><br>
+  TECLA1 — Sirene intermitente<br>
+  TECLA1 — Reporta inatividade<br>
+  TECLA2 — Sensibilidade do sensor sem fio mínima<br>
+  TECLA3 — Sensibilidade do sensor sem fio média<br>
+  TECLA4 — Sensibilidade do sensor sem fio máxima<br>
+  TECLA5 — Chime<br>
+  TECLA6 — Aviso de porta aberta<br><br>
+
+  601 a 699 – Nome da zona — Escrever o nome da zona (Zona xx)<br><br>
+
+  <strong>PROGRAMAÇÃO DOS USUÁRIOS</strong><br>
+  200 – Senha do usuário mestre — Senha com 4 ou 6 dígitos<br>
+  201 a 298 – Senha dos usuários — Senha com 4 ou 6 dígitos<br>
+  299 – Senha do instalador — Senha com 4 ou 6 dígitos<br><br>
+
+  300 – Atributos de permissões:<br>
+  TECLA1 — Permite acesso a programação<br>
+  TECLA2 — Permite acesso a programação de usuário<br>
+  TECLA3 — Permite armar<br>
+  TECLA4 — Permite desarmar<br>
+  TECLA5 — Permite operar PGM<br>
+  TECLA6 — Permite inibir zonas<br><br>
+
+  301 a 398 – Atributos dos usuários:<br>
+  &nbsp;&nbsp;• Armar partição de 01 a 16<br>
+  &nbsp;&nbsp;• Armar partição de A a D<br>
+  &nbsp;&nbsp;• Armar partição de A e B<br>
+  &nbsp;&nbsp;• Desarmar<br>
+  &nbsp;&nbsp;• Armar AWAY<br>
+  &nbsp;&nbsp;• Inibir zonas<br>
+  &nbsp;&nbsp;• Acesso remoto<br>
+  &nbsp;&nbsp;• Ronda<br>
+  &nbsp;&nbsp;• Operar PGM de 1 a 4<br>
+  &nbsp;&nbsp;• Operar PGM 1 a 16<br>
+  &nbsp;&nbsp;• Opera eletrificador<br><br>
+
+  900 a 998 – Nome dos usuários — Escrever o nome do usuário (USUA xx)<br>
+
+
+    <strong>PROGRAMAÇÃO DOS TEMPOS</strong><br>
+    400 – Trava de reset — Valor com 3 dígitos. 159 trava, outro valor não trava — Padrão: 000<br>
+    401 e 411 – Tempo de entrada 1 e 2 — Valor com 3 dígitos em segundos — Padrão: 060<br>
+    402 e 412 – Tempo de saída 1 e 2 — Valor com 3 dígitos em segundos — Padrão: 060<br>
+    (sem endereço) — Valor com 3 dígitos em minutos — Padrão: 005<br>
+    (sem endereço) — Valor com 3 dígitos em minutos. 000 desabilita — Padrão: 000<br>
+    (sem endereço) — Valor com 3 dígitos. De 001 a 200 em minutos ou de 201 a 255 (01 a 55 segundos) — Padrão:
+    002<br>
+    425 – Tempo de zona inteligente — Valor com 3 dígitos em segundos — Padrão: 060<br>
+    426 – Tempo de falta de AC — Valor com 3 dígitos em minutos — Padrão: 001<br>
+    427 – Intervalo de autoteste — Valor com 3 dígitos. De 001 a 200 em horas ou de 201 a 255 (01 a 55 minutos) —
+    Padrão: 000<br>
+    428 – Tempo de falta de linha telefônica — Valor com 3 dígitos em minutos — Padrão: 005<br>
+    429 a 431 – Tempo para expirar as senhas temporárias — Valor com 3 dígitos em dias — Padrão: 000<br>
+    432 – Intervalo de ronda — Valor com 3 dígitos em minutos — Padrão: 000<br>
+    433 – Tempo de duração da ronda — Valor com 3 dígitos em minutos. 000 desabilita — Padrão: 000<br>
+    434 – Intervalo do autoteste do meio secundário — Valor com 3 dígitos em horas — Padrão: 000<br>
+    435 – Tempo de porta aberta — Valor com 3 dígitos em minutos. 000 desabilita — Padrão: 005<br>
+    436 – Tempo reporte inatividade zona — Valor com 3 dígitos em horas. 000 desabilita — Padrão: 000<br><br>
+
+    <strong>PROGRAMAÇÃO DOS HORÁRIOS</strong><br>
+    500 – Data e hora automáticas<br>
+    &nbsp;&nbsp;00 — Desabilitada<br>
+    &nbsp;&nbsp;03 — Brasília sem horário de verão automático<br>
+    501 – Hora do alarme — Valor com 6 dígitos em formato 24H (HH:MM:SS) — Padrão: 00:00:00<br>
+    502 – Data do alarme — Valor com 6 dígitos (DD/MM/AA) — Padrão: 01/01/00<br>
+    503 – Hora do primeiro autoteste — Valor com 4 dígitos no formato 24H (HH:MM). 00:00 desabilita — Padrão:
+    00:00<br>
+    506 e 507 – Hora do início e término de ronda — Valor com 4 dígitos no formato 24H (HH:MM) — Padrão: 00:00<br>
+    508 e 509 – Horário do início e término do arme por não movimento — Valor com 4 dígitos no formato 24H (HH:MM) —
+    Faixa: 00:00 a 23:59<br>
+    (sem endereço) — Valor com 4 dígitos no formato 24H (HH:MM) — Padrão: 00:00<br>
+    (sem endereço) — Valor com 4 dígitos no formato 24H (HH:MM) — Padrão: 00:00<br>
+    521 a 524 – Horário do auto arme das partições — Valor com 4 dígitos no formato 24H (HH:MM). 00:00 desabilita —
+    Padrão: 00:00<br><br>
+
+    <strong>Tempo de disparo das partições</strong><br>
+    403 partA — 413 partB<br><br>
+
+    <strong>Tempo de acionamento das saídas PGM</strong><br>
+    511 a 514<br><br>
+
+    <strong>Horário para acionar as saídas PGM</strong><br>
+    515 a 518
+    </p>
 </body>
+
 </html>

@@ -27,9 +27,7 @@ p {
   h1{
     font-size: 18px;
     width: 350px;
-    
-    
-  }
+    }
 
  p{
     width: 350px;
@@ -38,6 +36,9 @@ p {
  img{
     width: 350px;
     height: 250px;
+ }
+ .aula02{
+    width: 100px;
  }
 }
 
