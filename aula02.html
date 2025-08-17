@@ -11,117 +11,89 @@
 <body>
     
     <h1>PROGRAMAÇÃO Active20 JFL</h1><br>
-   <p class="aula">
-  <strong>PROGRAMAÇÃO DAS ZONAS</strong><br><br>
-  001 a 099 – Tipo da zona<br>
-  &nbsp;&nbsp;00 — Desabilitada<br>
-  &nbsp;&nbsp;10 — Imediata<br>
-  &nbsp;&nbsp;11 — Tempo de entrada e saída 1<br>
-  &nbsp;&nbsp;12 — Tempo de entrada e saída 2<br>
-  &nbsp;&nbsp;13 — Seguidora<br>
-  &nbsp;&nbsp;14 — 24 Horas<br>
-  &nbsp;&nbsp;15 — Ronda<br>
-  &nbsp;&nbsp;16 — 24H pânico<br>
-  &nbsp;&nbsp;19 — 24 horas tamper<br>
-  100xx – Número da partição da zona — Padrão: 01<br>
-  101 a 199 – Programação dos atributos da zona<br><br>
+   <h2>1. Programação dos Tempos e Horários</h2>
+    <p><strong>400</strong> – Trava de reset — Valor com 3 dígitos. 159 trava, outro valor não trava — Padrão: 000</p>
+    <p><strong>401 e 411</strong> – Tempo de entrada 1 e 2 — Valor com 3 dígitos em segundos — Padrão: 060</p>
+    <p><strong>402 e 412</strong> – Tempo de saída 1 e 2 — Valor com 3 dígitos em segundos — Padrão: 060</p>
+    <p><strong>425</strong> – Tempo de zona inteligente — 060 seg</p>
+    <p><strong>426</strong> – Tempo de falta de AC — 001 min</p>
+    <p><strong>427</strong> – Intervalo de autoteste — 000</p>
+    <p><strong>428</strong> – Tempo de falta de linha telefônica — 005 min</p>
+    <p><strong>429 a 431</strong> – Expiração senhas temporárias — 000 dias</p>
+    <p><strong>432</strong> – Intervalo de ronda — 000 min</p>
+    <p><strong>433</strong> – Duração da ronda — 000 min</p>
+    <p><strong>434</strong> – Intervalo autoteste meio secundário — 000 h</p>
+    <p><strong>435</strong> – Porta aberta — 005 min</p>
+    <p><strong>436</strong> – Inatividade zona — 000 h</p>
 
-  <em>ARM A</em><br>
-  TECLA1 — Partição A<br>
-  TECLA2 — Partição B<br>
-  TECLA3 — Partição C<br>
-  TECLA4 — Partição D<br>
-  TECLA5 — STAY<br>
-  TECLA6 — Inteligente<br>
-  TECLA7 — Silenciosa<br>
-  TECLA8 — Auto anulável<br>
-  TECLA9 — Permite inibir<br><br>
+    <h3>Horários</h3>
+    <p><strong>500</strong> – Data/hora automáticas (00 desabilita, 03 Brasília sem horário de verão)</p>
+    <p><strong>501</strong> – Hora do alarme — HH:MM:SS</p>
+    <p><strong>502</strong> – Data do alarme — DD/MM/AA</p>
+    <p><strong>503</strong> – Primeiro autoteste — HH:MM</p>
+    <p><strong>506/507</strong> – Início/término da ronda — HH:MM</p>
+    <p><strong>508/509</strong> – Arme por não movimento — HH:MM</p>
+    <p><strong>521 a 524</strong> – Auto arme das partições — HH:MM</p>
+    <p><strong>403/413</strong> – Tempo de disparo partições A/B</p>
+    <p><strong>511 a 514</strong> – Tempo acionamento PGM</p>
+    <p><strong>515 a 518</strong> – Horário acionamento PGM</p>
+  </div>
 
-  <em>ARM B</em><br>
-  TECLA1 — Sirene intermitente<br>
-  TECLA1 — Reporta inatividade<br>
-  TECLA2 — Sensibilidade do sensor sem fio mínima<br>
-  TECLA3 — Sensibilidade do sensor sem fio média<br>
-  TECLA4 — Sensibilidade do sensor sem fio máxima<br>
-  TECLA5 — Chime<br>
-  TECLA6 — Aviso de porta aberta<br><br>
+  <!-- PROGRAMAÇÃO DAS ZONAS E USUÁRIOS -->
+  <div class="section">
+    <h2>2. Programação das Zonas e Usuários</h2>
+    <h3>Zonas</h3>
+    <p><strong>001 a 099</strong> – Tipo da zona (00 Desabilitada, 10 Imediata, 11 Entrada/Saída 1, 12 Entrada/Saída 2, 13 Seguidora, 14 24h, 15 Ronda, 16 Pânico, 19 Tamper)</p>
+    <p><strong>100xx</strong> – Número da partição (01 padrão)</p>
+    <p><strong>101 a 199</strong> – Atributos da zona</p>
 
-  601 a 699 – Nome da zona — Escrever o nome da zona (Zona xx)<br><br>
+    <h4>ARM A</h4>
+    <p>Partições A-D, Stay, Inteligente, Silenciosa, Auto anulável, Permite inibir</p>
+    <h4>ARM B</h4>
+    <p>Sirene intermitente, Reporta inatividade, Sensibilidade sem fio (mín, média, máx), Chime, Aviso porta aberta</p>
+    <p><strong>601 a 699</strong> – Nome da zona</p>
 
-  <strong>PROGRAMAÇÃO DOS USUÁRIOS</strong><br>
-  200 – Senha do usuário mestre — Senha com 4 ou 6 dígitos<br>
-  201 a 298 – Senha dos usuários — Senha com 4 ou 6 dígitos<br>
-  299 – Senha do instalador — Senha com 4 ou 6 dígitos<br><br>
+    <h3>Usuários</h3>
+    <p><strong>200</strong> – Senha do mestre</p>
+    <p><strong>201 a 298</strong> – Senhas dos usuários</p>
+    <p><strong>299</strong> – Senha do instalador</p>
+    <p><strong>300</strong> – Permissões (programação, arme, desarme, PGM, inibir zonas)</p>
+    <p><strong>301 a 398</strong> – Atributos (armar partições, AWAY, ronda, PGM, eletrificador)</p>
+    <p><strong>900 a 998</strong> – Nome dos usuários</p>
+  </div>
 
-  300 – Atributos de permissões:<br>
-  TECLA1 — Permite acesso a programação<br>
-  TECLA2 — Permite acesso a programação de usuário<br>
-  TECLA3 — Permite armar<br>
-  TECLA4 — Permite desarmar<br>
-  TECLA5 — Permite operar PGM<br>
-  TECLA6 — Permite inibir zonas<br><br>
+  <!-- COMUNICAÇÃO -->
+  <div class="section">
+    <h2>3. Programação da Comunicação</h2>
+    <p><strong>700</strong> – Opções de reporte (linha, 4G, Ethernet, discadora, SMS, DHCP...)</p>
+    <p><strong>701</strong> – Opções de acesso remoto (SMS, telefone, app, nuvem Ethernet/4G, notificações)</p>
+    <p><strong>702/703</strong> – Endereço IP destino (até 36 caracteres)</p>
+    <p><strong>706/707</strong> – Porta de comunicação IP1/IP2</p>
+    <p><strong>710</strong> – Notificações (Armes, Desarmes, Alarmes, PGM, Problemas, Eventos)</p>
+    <p><strong>720</strong> – Bloqueios do app (problemas, firmware, tarefas)</p>
+    <p><strong>721/731</strong> – PIN SIM card</p>
+    <p><strong>740 a 743</strong> – Rede IP (IP, máscara, gateway, DNS)</p>
+    <p><strong>746/747</strong> – Wi-Fi (SSID e senha)</p>
+    <p><em>Exemplo:</em> 702 — vegasvigilancia.ddns.net</p>
+    <p><strong>704/705</strong> – Conta das partições</p>
+  </div>
 
-  301 a 398 – Atributos dos usuários:<br>
-  &nbsp;&nbsp;• Armar partição de 01 a 16<br>
-  &nbsp;&nbsp;• Armar partição de A a D<br>
-  &nbsp;&nbsp;• Armar partição de A e B<br>
-  &nbsp;&nbsp;• Desarmar<br>
-  &nbsp;&nbsp;• Armar AWAY<br>
-  &nbsp;&nbsp;• Inibir zonas<br>
-  &nbsp;&nbsp;• Acesso remoto<br>
-  &nbsp;&nbsp;• Ronda<br>
-  &nbsp;&nbsp;• Operar PGM de 1 a 4<br>
-  &nbsp;&nbsp;• Operar PGM 1 a 16<br>
-  &nbsp;&nbsp;• Opera eletrificador<br><br>
-
-  900 a 998 – Nome dos usuários — Escrever o nome do usuário (USUA xx)<br>
-
-
-    <strong>PROGRAMAÇÃO DOS TEMPOS</strong><br>
-    400 – Trava de reset — Valor com 3 dígitos. 159 trava, outro valor não trava — Padrão: 000<br>
-    401 e 411 – Tempo de entrada 1 e 2 — Valor com 3 dígitos em segundos — Padrão: 060<br>
-    402 e 412 – Tempo de saída 1 e 2 — Valor com 3 dígitos em segundos — Padrão: 060<br>
-    (sem endereço) — Valor com 3 dígitos em minutos — Padrão: 005<br>
-    (sem endereço) — Valor com 3 dígitos em minutos. 000 desabilita — Padrão: 000<br>
-    (sem endereço) — Valor com 3 dígitos. De 001 a 200 em minutos ou de 201 a 255 (01 a 55 segundos) — Padrão:
-    002<br>
-    425 – Tempo de zona inteligente — Valor com 3 dígitos em segundos — Padrão: 060<br>
-    426 – Tempo de falta de AC — Valor com 3 dígitos em minutos — Padrão: 001<br>
-    427 – Intervalo de autoteste — Valor com 3 dígitos. De 001 a 200 em horas ou de 201 a 255 (01 a 55 minutos) —
-    Padrão: 000<br>
-    428 – Tempo de falta de linha telefônica — Valor com 3 dígitos em minutos — Padrão: 005<br>
-    429 a 431 – Tempo para expirar as senhas temporárias — Valor com 3 dígitos em dias — Padrão: 000<br>
-    432 – Intervalo de ronda — Valor com 3 dígitos em minutos — Padrão: 000<br>
-    433 – Tempo de duração da ronda — Valor com 3 dígitos em minutos. 000 desabilita — Padrão: 000<br>
-    434 – Intervalo do autoteste do meio secundário — Valor com 3 dígitos em horas — Padrão: 000<br>
-    435 – Tempo de porta aberta — Valor com 3 dígitos em minutos. 000 desabilita — Padrão: 005<br>
-    436 – Tempo reporte inatividade zona — Valor com 3 dígitos em horas. 000 desabilita — Padrão: 000<br><br>
-
-    <strong>PROGRAMAÇÃO DOS HORÁRIOS</strong><br>
-    500 – Data e hora automáticas<br>
-    &nbsp;&nbsp;00 — Desabilitada<br>
-    &nbsp;&nbsp;03 — Brasília sem horário de verão automático<br>
-    501 – Hora do alarme — Valor com 6 dígitos em formato 24H (HH:MM:SS) — Padrão: 00:00:00<br>
-    502 – Data do alarme — Valor com 6 dígitos (DD/MM/AA) — Padrão: 01/01/00<br>
-    503 – Hora do primeiro autoteste — Valor com 4 dígitos no formato 24H (HH:MM). 00:00 desabilita — Padrão:
-    00:00<br>
-    506 e 507 – Hora do início e término de ronda — Valor com 4 dígitos no formato 24H (HH:MM) — Padrão: 00:00<br>
-    508 e 509 – Horário do início e término do arme por não movimento — Valor com 4 dígitos no formato 24H (HH:MM) —
-    Faixa: 00:00 a 23:59<br>
-    (sem endereço) — Valor com 4 dígitos no formato 24H (HH:MM) — Padrão: 00:00<br>
-    (sem endereço) — Valor com 4 dígitos no formato 24H (HH:MM) — Padrão: 00:00<br>
-    521 a 524 – Horário do auto arme das partições — Valor com 4 dígitos no formato 24H (HH:MM). 00:00 desabilita —
-    Padrão: 00:00<br><br>
-
-    <strong>Tempo de disparo das partições</strong><br>
-    403 partA — 413 partB<br><br>
-
-    <strong>Tempo de acionamento das saídas PGM</strong><br>
-    511 a 514<br><br>
-
-    <strong>Horário para acionar as saídas PGM</strong><br>
-    515 a 518
-    </p>
+  <!-- OPÇÕES GERAIS E TECLADO -->
+  <div class="section">
+    <h2>4. Opções Gerais e de Teclado</h2>
+    <p><strong>800</strong> – Dígito de coação — Padrão: 0</p>
+    <p><strong>801</strong> – Opções gerais (senha 6 dígitos, arme rápido STAY, supervisão teclado, bip sirene, bloquear após 5 erros...)</p>
+    <p><strong>802</strong> – Linha telefônica (pulso, aguardar tom, monitoramento)</p>
+    <p><strong>803</strong> – Eventos de reporte (PGM, pânico, programação, ronda, rede IP)</p>
+    <p><strong>804</strong> – Zonas com fio (EOL, tamper, zonas duplas, entrada liga)</p>
+    <p><strong>805</strong> – Pânico (1+3), Emergência médica (4+6), Incêndio (7+9), sirene habilitada</p>
+    <p><strong>806</strong> – Sensores sem fio (falha, tamper, supervisão, inibir desarmado)</p>
+    <p><strong>807</strong> – Barramento (falha, tamper, supervisão)</p>
+    <p><strong>808</strong> – Pânico por app (incêndio, médica, pânico audível)</p>
+    <p><strong>809</strong> – Nível DTMF Contact ID (1 a 4) — Padrão: 3</p>
+    <p><strong>810</strong> – Endereçamento teclados (01 a 04, arme rápido, bips, iluminação, nº zona)</p>
+    <p><strong>811 a 814</strong> – Opções de teclado (PROB/MEM navegação, BYP marcação, ENTER confirmar, partições A-D)</p>
+    <p><strong>815 a 818</strong> – Configurações adicionais de teclado</p>
 </body>
 
 </html>
