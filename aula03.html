@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./aula01.css">
@@ -7,145 +8,164 @@
 </head>
 
 
-  <h1>RRC-400 – Receptor Multifuncional</h1>
+<h1>RRC-400 – Receptor Multifuncional</h1>
 
-  <p>
-    O <strong>RRC-400</strong> é um receptor multifuncional microcontrolado que possui quatro canais programáveis, 
-    que podem ser ativados de acordo com a configuração dos jumpers (<strong>PROG</strong>). 
-    Esse receptor aceita sensores de abertura sem fio e sensores infravermelho sem fio na frequência de 
-    <strong>433,92 MHz</strong> no sistema <em>Hopping Code</em>. 
-    Também aceita controles remotos nos sistemas <em>Hopping Code</em> e <em>Rolling Code</em>, ambos na frequência 433,92 MHz.
-  </p>
+<p>
+  O <strong>RRC-400</strong> é um receptor multifuncional microcontrolado que possui quatro canais programáveis,
+  que podem ser ativados de acordo com a configuração dos jumpers (<strong>PROG</strong>).
+  Esse receptor aceita sensores de abertura sem fio e sensores infravermelho sem fio na frequência de
+  <strong>433,92 MHz</strong> no sistema <em>Hopping Code</em>.
+  Também aceita controles remotos nos sistemas <em>Hopping Code</em> e <em>Rolling Code</em>, ambos na frequência 433,92
+  MHz.
+</p>
 
-  <p>
-    O RRC-400 pode ser usado para automação de cargas através de dispositivos sem fio, com capacidade de armazenamento de 
-    <strong>300 controles</strong> e <strong>40 sensores</strong>. 
-    O receptor RRC-400 se destaca no uso de automação e expansão de capacidade de memória de dispositivos sem fio. 
-    Também é indicado para retransmitir via cabo para centrais de alarme, movimentadores, entre outros, 
-    os sinais recebidos sem fio de sensores ou controles nele armazenados.
-  </p>
+<p>
+  O RRC-400 pode ser usado para automação de cargas através de dispositivos sem fio, com capacidade de armazenamento de
+  <strong>300 controles</strong> e <strong>40 sensores</strong>.
+  O receptor RRC-400 se destaca no uso de automação e expansão de capacidade de memória de dispositivos sem fio.
+  Também é indicado para retransmitir via cabo para centrais de alarme, movimentadores, entre outros,
+  os sinais recebidos sem fio de sensores ou controles nele armazenados.
+</p>
 
-  <h2>1.1 Características Gerais</h2>
-  <p><strong>Frequência:</strong> 433,92 MHz</p>
-  <p><strong>Alcance de transmissão:</strong> 100 metros sem obstáculos</p>
-  <p><strong>Dupla tecnologia:</strong> Hopping Code e Rolling Code</p>
-  <p><strong>Canal de saída:</strong> 4 canais programáveis</p>
-  <p><strong>Consumo em repouso:</strong> 15mA / 12Vc.c.</p>
-  <p><strong>Consumo em acionamento:</strong> 120mA / 12Vc.c.</p>
-  <p><strong>Tensão de alimentação:</strong> 12 a 24Vc.c.</p>
-  <p><strong>Dimensões:</strong> 125 x 85 x 40 mm</p>
-  <p><strong>Peso:</strong> 170 g</p>
-  <p><strong>Máximo de controles:</strong> 300</p>
-  <p><strong>Máximo de sensores:</strong> 40</p>
-  <p><strong>Carga máxima para cada relé:</strong><br>
-    12Vc.c. = 3A (36W)<br>
-    127Vc.a. = 2A (254W)<br>
-    220Vc.a. = 2A (440W)
-  </p>
-  <img src="./assets/receptora3.png" alt=""><br><br>
+<h2>1.1 Características Gerais</h2>
+<p><strong>Frequência:</strong> 433,92 MHz;
+  <strong>Alcance de transmissão:</strong> 100 metros sem obstáculos;
+  <strong>Dupla tecnologia:</strong> Hopping Code e Rolling Code;
+  <strong>Canal de saída:</strong> 4 canais programáveis;
+  <strong>Consumo em repouso:</strong> 15mA / 12Vc.c.;
+  <strong>Consumo em acionamento:</strong> 120mA / 12Vc.c.;
+  <strong>Tensão de alimentação:</strong> 12 a 24Vc.c.;
+  <strong>Dimensões:</strong> 125 x 85 x 40 mm;
+  <strong>Peso:</strong> 170 g;
+  <strong>Máximo de controles:</strong> 300;
+  <strong>Máximo de sensores:</strong> 40;
+  <strong>Carga máxima para cada relé:</strong><br>
+  12Vc.c. = 3A (36W)<br>
+  127Vc.a. = 2A (254W)<br>
+  220Vc.a. = 2A (440W)
+</p>
+<img src="./assets/receptora3.png" alt=""><br><br>
 
-  <h1>RRC-400 – Instalação e Programação</h1>
+<h1>RRC-400 – Instalação e Programação</h1>
 
-  <h2>2. Descrição dos Componentes</h2>
-  <p><strong>1)</strong> Alimentação: 12 a 24Vc.c.</p>
-  <p><strong>2)</strong> Canal de saída 1 (relê 1)</p>
-  <p><strong>3)</strong> Canal de saída 2 (relê 2)</p>
-  <p><strong>4)</strong> Canal de saída 3 (relê 3)</p>
-  <p><strong>5)</strong> Canal de saída 4 (relê 4)</p>
-  <p><strong>6)</strong> <strong>TECLA APRENDER:</strong> usada para cadastrar dispositivos sem fio</p>
-  <p><strong>7)</strong> <strong>LED APRENDER (Vermelho):</strong> indicador visual do processo de cadastramento<br>
-    – Aceso 2s após TECLA APRENDER: dispositivo sem fio cadastrado<br>
-    – Aceso 2s quando acionado: dispositivo já cadastrado<br>
-    – Piscando: recebendo dispositivo não cadastrado
-  </p>
-  <p><strong>8)</strong> Conector <strong>BOOT:</strong> usado para atualização de firmware</p>
-  <p><strong>9)</strong> <strong>Jumpers 1, 2, 3 e 4 (PROG):</strong> utilizados para programação dos canais de saída</p>
-  <p><strong>10)</strong> <strong>Jumper JT:</strong> usado para programação de tempo da função SEM RETENÇÃO</p>
-  <p><strong>11)</strong> <strong>Antena:</strong> utilizada para recepção de dispositivos sem fio na frequência 433,92 MHz</p>
+<h2>2. Descrição dos Componentes</h2>
+<p><strong>1)</strong> Alimentação: 12 a 24Vc.c.</p>
+<p><strong>2)</strong> Canal de saída 1 (relê 1)</p>
+<p><strong>3)</strong> Canal de saída 2 (relê 2)</p>
+<p><strong>4)</strong> Canal de saída 3 (relê 3)</p>
+<p><strong>5)</strong> Canal de saída 4 (relê 4)</p>
+<p><strong>6)</strong> <strong>TECLA APRENDER:</strong> usada para cadastrar dispositivos sem fio</p>
+<p><strong>7)</strong> <strong>LED APRENDER (Vermelho):</strong> indicador visual do processo de cadastramento<br>
+  – Aceso 2s após TECLA APRENDER: dispositivo sem fio cadastrado<br>
+  – Aceso 2s quando acionado: dispositivo já cadastrado<br>
+  – Piscando: recebendo dispositivo não cadastrado
+</p>
+<p><strong>8)</strong> Conector <strong>BOOT:</strong> usado para atualização de firmware</p>
+<p><strong>9)</strong> <strong>Jumpers 1, 2, 3 e 4 (PROG):</strong> utilizados para programação dos canais de saída</p>
+<p><strong>10)</strong> <strong>Jumper JT:</strong> usado para programação de tempo da função SEM RETENÇÃO</p>
+<p><strong>11)</strong> <strong>Antena:</strong> utilizada para recepção de dispositivos sem fio na frequência 433,92
+  MHz</p>
 
-  <h2>3. Instalação</h2>
-  <p>
-    O receptor deve ser instalado em local alto, para maior alcance de seus dispositivos.  
-    Instalações em ambientes com muitas paredes podem reduzir o alcance para até 15 metros.  
-    O receptor não deve ser instalado abaixo do nível do solo.  
-    Transmissores mais potentes próximos podem interferir no funcionamento, reduzindo a área de cobertura.
-  </p>
+<h2>3. Instalação</h2>
+<p>
+  O receptor deve ser instalado em local alto, para maior alcance de seus dispositivos.
+  Instalações em ambientes com muitas paredes podem reduzir o alcance para até 15 metros.
+  O receptor não deve ser instalado abaixo do nível do solo.
+  Transmissores mais potentes próximos podem interferir no funcionamento, reduzindo a área de cobertura.
+</p>
 
-  <h2>4. Programação</h2>
-  <p>
-    O RRC-400 permite cadastrar os dispositivos sem fio e programar qual será a função de seus canais de saída através dos <strong>jumpers de programação</strong>.
-  </p>
+<h2>4. Programação</h2>
+<p>
+  O RRC-400 permite cadastrar os dispositivos sem fio e programar qual será a função de seus canais de saída através dos
+  <strong>jumpers de programação</strong>.
+</p>
 
-  <h3>4.1 Cadastro de Sensores e Controles Remotos</h3>
-  <p>Para cadastrar um dispositivo:</p>
-  <p>1) Pressione e segure uma tecla do controle remoto ou ative o sensor (LED APRENDER pisca).<br>
-     2) Pressione e solte a <strong>TECLA APRENDER</strong> (LED acende por 2s e apaga).
-  </p>
+<h3>4.1 Cadastro de Sensores e Controles Remotos</h3>
+<p>Para cadastrar um dispositivo:</p>
+<p>1) Pressione e segure uma tecla do controle remoto ou ative o sensor (LED APRENDER pisca).<br>
+  2) Pressione e solte a <strong>TECLA APRENDER</strong> (LED acende por 2s e apaga).
+</p>
 
-  <p><strong>Teclas do controle remoto:</strong><br>
-    Tecla 1 → Canal 1 (relê 1);
-    Tecla 2 → Canal 2 (relê 2);
-    Tecla 3 → Canal 3 (relê 3);
-    Tecla 4 → Canal 4 (relê 4);
-  </p>
+<p><strong>Teclas do controle remoto:</strong><br>
+  Tecla 1 → Canal 1 (relê 1) <br>
+  Tecla 2 → Canal 2 (relê 2) <br>
+  Tecla 3 → Canal 3 (relê 3) <br>
+  Tecla 4 → Canal 4 (relê 4) <br>
+</p>
 
-  <p><strong>Observação:</strong><br>
-    – Se apenas um canal estiver programado para acionamento via controle remoto, qualquer tecla acionará o canal correspondente.<br>
-    – Para sensores, se mais de um canal estiver configurado como SENSOR:<br>
-    Zona 1 → Canal 1;
-    Zona 2 → Canal 2;
-    Zona 3 → Canal 3;
-    Zona 4 → Canal 4;
-    Se apenas um canal tiver a função SENSOR, os sensores o acionarão independentemente da zona configurada.
-  </p>
+<p><strong>Observação:</strong><br>
+  – Se apenas um canal estiver programado para acionamento via controle remoto, qualquer tecla acionará o canal
+  correspondente.<br>
+  – Para sensores, se mais de um canal estiver configurado como SENSOR:<br>
+  Zona 1 → Canal 1 <br>
+  Zona 2 → Canal 2 <br>
+  Zona 3 → Canal 3 <br>
+  Zona 4 → Canal 4 <br>
+  Se apenas um canal tiver a função SENSOR, os sensores o acionarão independentemente da zona configurada.
+</p> <br>
 
-  <h3>Limite de Memória</h3>
-  <p>
-    O número máximo é de <strong>300 controles remotos</strong> e <strong>40 sensores sem fio</strong>.  
-    Ao gravar um novo dispositivo quando a memória está cheia, ele sobrescreve a primeira posição de memória.
-  </p>
+<p><strong>Limite de Memória</strong></p>
+<br>
+<p>
+  O número máximo é de <strong>300 controles remotos</strong> e <strong>40 sensores sem fio</strong>.
+  Ao gravar um novo dispositivo quando a memória está cheia, ele sobrescreve a primeira posição de memória.
+</p>
+<br>
 
-  <h1>RRC-400 – Programação de Memória e Canais</h1>
+<h1>RRC-400 – Programação de Memória e Canais</h1>
+<br>
+<h2>4.1 Apagar Memória de Sensores e Controles</h2>
+<br>
+<p>
+  Para apagar todos os dispositivos cadastrados:<br>
+  1) Pressione e segure a <strong>TECLA APRENDER</strong> por 7 segundos. <br>
+  2) O <strong>LED APRENDER</strong> irá apagar. <br>
+  3) Todas as memórias de sensores e controles serão apagadas. <br>
+</p>
+<br>
 
-  <h2>4.1 Apagar Memória de Sensores e Controles</h2>
-  <p>
-    Para apagar todos os dispositivos cadastrados:<br>
-    1) Pressione e segure a <strong>TECLA APRENDER</strong> por 7 segundos.;
-    2) O <strong>LED APRENDER</strong> irá apagar.;
-    3) Todas as memórias de sensores e controles serão apagadas.
-  </p>
+<h2>4.2 Programação dos Canais de Saída (Jumpers de Programação)</h2>
+<br>
+<p>
+  O receptor pode ser programado para obedecer ao <strong>controle remoto</strong> e/ou ao <strong>sensor</strong>.
+  A configuração é feita através dos <strong>jumpers 1, 2, 3 e 4 (PROG)</strong>, correspondentes aos canais:<br>
+  Relê 1;
+  Relê 2;
+  Relê 3;
+  Relê 4;
+</p>
+<br>
+<img src="./assets/receptora1.png" alt=""><br>
 
-  <h2>4.2 Programação dos Canais de Saída (Jumpers de Programação)</h2>
-  <p>
-    O receptor pode ser programado para obedecer ao <strong>controle remoto</strong> e/ou ao <strong>sensor</strong>.  
-    A configuração é feita através dos <strong>jumpers 1, 2, 3 e 4 (PROG)</strong>, correspondentes aos canais:<br>
-    Relê 1;
-    Relê 2;
-    Relê 3;
-    Relê 4;
-  </p>
-  <img src="./assets/receptora1.png" alt=""><br>
+<p>
+  Para a programação do <strong>JUMPER JT</strong>:<br>
+  – <strong>Sem Jumper:</strong> o canal ficará atracado por aproximadamente 0,6 segundos. <br>
+  – <strong>Com Jumper:</strong> o canal ficará atracado por aproximadamente 2 segundos. <br>
+  <em>Obs.: Após qualquer alteração nos jumpers de programação, reinicie o equipamento para que as configurações se
+    tornem operantes.</em>
+    <br>
+</p>
 
-  <p>
-    Para a programação do <strong>JUMPER JT</strong>:<br>
-    – <strong>Sem Jumper:</strong> o canal ficará atracado por aproximadamente 0,6 segundos.;
-    – <strong>Com Jumper:</strong> o canal ficará atracado por aproximadamente 2 segundos.;
-    <em>Obs.: Após qualquer alteração nos jumpers de programação, reinicie o equipamento para que as configurações se tornem operantes.</em>
-  </p>
+<h2>5. Modo de Operação dos Canais</h2> <br>
+<p><strong>COM RETENÇÃO:</strong> O canal aciona ao pressionar o botão do controle remoto e desaciona ao pressioná-lo
+  novamente.</p>
+<p><strong>SEM RETENÇÃO:</strong> Ao pressionar o botão do controle remoto, o canal aciona por um tempo (0,6 ou 2
+  segundos), dependendo da programação do <strong>JUMPER JT</strong>.</p>
+<p><strong>BIP:</strong> Serve para emitir um sinal sonoro através de uma sirene indicando que o canal 1 foi acionado ou
+  desacionado.<br>
+  – Canal 1 SEM RETENÇÃO + Canal 3 BIP → Canal 3 atraca e desatraca 1 vez.<br>
+  – Canal 1 COM RETENÇÃO + Canal 3 BIP → Ao acionar o canal 1, o canal 3 atraca e desatraca 2 vezes; ao desacionar, o
+  canal 3 atraca e desatraca 1 vez.
+</p> <br>
+<p><strong>SENSOR:</strong> Permite que sensores sem fio acionem o canal do receptor.<br>
+  O canal aciona por 4 segundos ao receber sinal. Se o sensor for acionado novamente enquanto o canal já estiver ativo,
+  a contagem reinicia.<br>
+  Quando apenas um canal do receptor estiver programado para receber sensor, o jumper de zona do sensor pode estar em
+  qualquer posição.
+</p> <br>
 
-  <h2>5. Modo de Operação dos Canais</h2>
-  <p><strong>COM RETENÇÃO:</strong> O canal aciona ao pressionar o botão do controle remoto e desaciona ao pressioná-lo novamente.</p>
-  <p><strong>SEM RETENÇÃO:</strong> Ao pressionar o botão do controle remoto, o canal aciona por um tempo (0,6 ou 2 segundos), dependendo da programação do <strong>JUMPER JT</strong>.</p>
-  <p><strong>BIP:</strong> Serve para emitir um sinal sonoro através de uma sirene indicando que o canal 1 foi acionado ou desacionado.<br>
-    – Canal 1 SEM RETENÇÃO + Canal 3 BIP → Canal 3 atraca e desatraca 1 vez.<br>
-    – Canal 1 COM RETENÇÃO + Canal 3 BIP → Ao acionar o canal 1, o canal 3 atraca e desatraca 2 vezes; ao desacionar, o canal 3 atraca e desatraca 1 vez.
-  </p>
-  <p><strong>SENSOR:</strong> Permite que sensores sem fio acionem o canal do receptor.<br>
-    O canal aciona por 4 segundos ao receber sinal. Se o sensor for acionado novamente enquanto o canal já estiver ativo, a contagem reinicia.<br>
-    Quando apenas um canal do receptor estiver programado para receber sensor, o jumper de zona do sensor pode estar em qualquer posição.
-  </p>
-
-  <img src="./assets/receptora2.png" alt="">
+<img src="./assets/receptora2.png" alt="">
 
 </body>
+
 </html>
