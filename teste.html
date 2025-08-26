@@ -1,12 +1,198 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./stlyles.css">
-    <title>Teste</title>
+  <meta charset="UTF-8">
+  <title>Questionário Técnico</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #e9e4e4;
+      color: #333;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    fieldset {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fff;
+    }
+    legend {
+      font-weight: bold;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background: #0077cc;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005fa3;
+    }
+  </style>
 </head>
 <body>
+  <h1>📋 Questionário Técnico – Sistema de Alarmes JFL</h1>
+  <form>
     
+    <!-- Perguntas sobre padrão de cores -->
+    <fieldset>
+      <legend>1. Padrão de Cores</legend>
+      <p>1) Qual cor representa o fio positivo (+) na instalação?</p>
+      <label><input type="radio" name="q1"> Preto</label><br>
+      <label><input type="radio" name="q1"> Vermelho</label><br>
+      <label><input type="radio" name="q1"> Azul</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Padrão de Cores</legend>
+      <p>2) A função do fio preto é:</p>
+      <label><input type="radio" name="q2"> Positivo (+)</label><br>
+      <label><input type="radio" name="q2"> Negativo (–)</label><br>
+      <label><input type="radio" name="q2"> Zona</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Padrão de Cores</legend>
+      <p>3) O fio verde ou azul é usado para:</p>
+      <label><input type="radio" name="q3"> Zona (entrada de sensores)</label><br>
+      <label><input type="radio" name="q3"> Alimentação</label><br>
+      <label><input type="radio" name="q3"> Comum</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Padrão de Cores</legend>
+      <p>4) O fio amarelo ou branco representa:</p>
+      <label><input type="radio" name="q4"> Zona</label><br>
+      <label><input type="radio" name="q4"> Comum da zona</label><br>
+      <label><input type="radio" name="q4"> Negativo</label>
+    </fieldset>
+
+    <!-- Perguntas sobre resistores -->
+    <fieldset>
+      <legend>5. Resistores</legend>
+      <p>5) Quais zonas utilizam o resistor de 2k2?</p>
+      <input type="text" name="q5">
+    </fieldset>
+
+    <fieldset>
+      <legend>6. Resistores</legend>
+      <p>6) O resistor de 3k3 é aplicado em quais zonas?</p>
+      <input type="text" name="q6">
+    </fieldset>
+
+    <fieldset>
+      <legend>7. Resistores</legend>
+      <p>7) Qual é o código de cores do resistor 2k2?</p>
+      <input type="text" name="q7">
+    </fieldset>
+
+    <fieldset>
+      <legend>8. Resistores</legend>
+      <p>8) O resistor é ligado em qual configuração com a zona?</p>
+      <label><input type="radio" name="q8"> Paralelo</label><br>
+      <label><input type="radio" name="q8"> Série</label><br>
+      <label><input type="radio" name="q8"> Cruzado</label>
+    </fieldset>
+
+    <!-- Perguntas sobre programação Active 20 -->
+    <fieldset>
+      <legend>9. Programação Active 20</legend>
+      <p>9) Qual o código da trava de reset?</p>
+      <input type="text" name="q9">
+    </fieldset>
+
+    <fieldset>
+      <legend>10. Programação Active 20</legend>
+      <p>10) O tempo de entrada 1 e 2 é configurado nos endereços:</p>
+      <input type="text" name="q10">
+    </fieldset>
+
+    <fieldset>
+      <legend>11. Programação Active 20</legend>
+      <p>11) Qual o tempo padrão de saída (códigos 402/412)?</p>
+      <label><input type="radio" name="q11"> 030 seg</label><br>
+      <label><input type="radio" name="q11"> 060 seg</label><br>
+      <label><input type="radio" name="q11"> 120 seg</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>12. Programação Active 20</legend>
+      <p>12) O código 426 refere-se a:</p>
+      <label><input type="radio" name="q12"> Falta de AC</label><br>
+      <label><input type="radio" name="q12"> Intervalo de ronda</label><br>
+      <label><input type="radio" name="q12"> Expiração de senha</label>
+    </fieldset>
+
+    <!-- Perguntas sobre zonas -->
+    <fieldset>
+      <legend>13. Programação de Zonas</legend>
+      <p>13) O código para tipo de zona é:</p>
+      <input type="text" name="q13">
+    </fieldset>
+
+    <fieldset>
+      <legend>14. Programação de Zonas</legend>
+      <p>14) A zona tipo "10" significa:</p>
+      <label><input type="radio" name="q14"> Imediata</label><br>
+      <label><input type="radio" name="q14"> Entrada/Saída</label><br>
+      <label><input type="radio" name="q14"> Pânico</label>
+    </fieldset>
+
+    <!-- Perguntas sobre usuários -->
+    <fieldset>
+      <legend>15. Usuários</legend>
+      <p>15) Qual é o código da senha do mestre?</p>
+      <input type="text" name="q15">
+    </fieldset>
+
+    <fieldset>
+      <legend>16. Usuários</legend>
+      <p>16) O código 299 corresponde a:</p>
+      <label><input type="radio" name="q16"> Senha do mestre</label><br>
+      <label><input type="radio" name="q16"> Senha do instalador</label><br>
+      <label><input type="radio" name="q16"> Senha do usuário</label>
+    </fieldset>
+
+    <!-- Perguntas sobre RRC-400 -->
+    <fieldset>
+      <legend>17. RRC-400</legend>
+      <p>17) Qual a frequência de operação do RRC-400?</p>
+      <input type="text" name="q17">
+    </fieldset>
+
+    <fieldset>
+      <legend>18. RRC-400</legend>
+      <p>18) Quantos canais de saída o RRC-400 possui?</p>
+      <label><input type="radio" name="q18"> 2</label><br>
+      <label><input type="radio" name="q18"> 4</label><br>
+      <label><input type="radio" name="q18"> 8</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>19. RRC-400</legend>
+      <p>19) Qual é a memória máxima de controles e sensores?</p>
+      <input type="text" name="q19">
+    </fieldset>
+
+    <fieldset>
+      <legend>20. RRC-400</legend>
+      <p>20) O jumper JT define:</p>
+      <label><input type="radio" name="q20"> Tempo de retenção</label><br>
+      <label><input type="radio" name="q20"> Frequência</label><br>
+      <label><input type="radio" name="q20"> Endereço IP</label>
+    </fieldset>
+
+    <button type="submit">Enviar Questionário</button>
+  </form>
 </body>
 </html>
