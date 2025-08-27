@@ -2,20 +2,18 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Questionário Técnico</title>
+  <title>Questionário Técnico – Alarmes JFL</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      background: #e9e4e4;
+      background: #f4f4f4;
       color: #333;
       padding: 20px;
       max-width: 900px;
       margin: auto;
     }
-    h1 {
-      text-align: center;
-    }
+    h1 { text-align: center; }
     fieldset {
       margin-bottom: 20px;
       padding: 15px;
@@ -23,175 +21,208 @@
       border-radius: 8px;
       background: #fff;
     }
-    legend {
-      font-weight: bold;
+    legend { font-weight: bold; }
+    label { display: block; margin: 6px 0; }
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 6px;
+      margin-top: 5px;
     }
     button {
-      padding: 10px 20px;
+      padding: 12px 24px;
       font-size: 16px;
       border: none;
       border-radius: 6px;
       background: #0077cc;
       color: white;
       cursor: pointer;
+      display: block;
+      margin: 20px auto;
     }
-    button:hover {
-      background: #005fa3;
-    }
+    button:hover { background: #005fa3; }
   </style>
 </head>
 <body>
   <h1>📋 Questionário Técnico – Sistema de Alarmes JFL</h1>
-  <form>
-    
-    <!-- Perguntas sobre padrão de cores -->
+
+  <form action="https://formspree.io/f/xovnqyoq" method="POST">
+
+    <!-- Nome -->
+    <fieldset>
+      <legend>Identificação</legend>
+      <p>Digite seu nome completo:</p>
+      <input type="text" name="nome" required>
+    </fieldset>
+
+    <!-- Questões -->
+    <!-- 1 -->
     <fieldset>
       <legend>1. Padrão de Cores</legend>
-      <p>1) Qual cor representa o fio positivo (+) na instalação?</p>
-      <label><input type="radio" name="q1"> Preto</label><br>
-      <label><input type="radio" name="q1"> Vermelho</label><br>
-      <label><input type="radio" name="q1"> Azul</label>
+      <p>Qual cor representa o fio **positivo (+)**?</p>
+      <label><input type="radio" name="q1" value="Preto"> Preto</label>
+      <label><input type="radio" name="q1" value="Vermelho"> Vermelho</label>
+      <label><input type="radio" name="q1" value="Amarelo"> Amarelo</label>
     </fieldset>
 
+    <!-- 2 -->
     <fieldset>
       <legend>2. Padrão de Cores</legend>
-      <p>2) A função do fio preto é:</p>
-      <label><input type="radio" name="q2"> Positivo (+)</label><br>
-      <label><input type="radio" name="q2"> Negativo (–)</label><br>
-      <label><input type="radio" name="q2"> Zona</label>
+      <p>O fio verde ou azul é usado para:</p>
+      <label><input type="radio" name="q2" value="Zona"> Zona (entrada sensor)</label>
+      <label><input type="radio" name="q2" value="Alimentacao"> Alimentação</label>
+      <label><input type="radio" name="q2" value="Sirene"> Sirene</label>
     </fieldset>
 
+    <!-- 3 -->
     <fieldset>
       <legend>3. Padrão de Cores</legend>
-      <p>3) O fio verde ou azul é usado para:</p>
-      <label><input type="radio" name="q3"> Zona (entrada de sensores)</label><br>
-      <label><input type="radio" name="q3"> Alimentação</label><br>
-      <label><input type="radio" name="q3"> Comum</label>
+      <p>O fio amarelo ou branco representa:</p>
+      <label><input type="radio" name="q3" value="Comum"> Comum da zona</label>
+      <label><input type="radio" name="q3" value="Positivo"> Positivo</label>
+      <label><input type="radio" name="q3" value="Negativo"> Negativo</label>
     </fieldset>
 
+    <!-- 4 -->
     <fieldset>
-      <legend>4. Padrão de Cores</legend>
-      <p>4) O fio amarelo ou branco representa:</p>
-      <label><input type="radio" name="q4"> Zona</label><br>
-      <label><input type="radio" name="q4"> Comum da zona</label><br>
-      <label><input type="radio" name="q4"> Negativo</label>
+      <legend>4. Resistores</legend>
+      <p>Nas zonas baixas (1 a 9), o resistor correto é:</p>
+      <label><input type="radio" name="q4" value="2k2"> 2k2 (2,2 kΩ)</label>
+      <label><input type="radio" name="q4" value="3k3"> 3k3 (3,3 kΩ)</label>
     </fieldset>
 
-    <!-- Perguntas sobre resistores -->
+    <!-- 5 -->
     <fieldset>
       <legend>5. Resistores</legend>
-      <p>5) Quais zonas utilizam o resistor de 2k2?</p>
-      <input type="text" name="q5">
+      <p>Nas zonas altas (11 a 19), o resistor correto é:</p>
+      <label><input type="radio" name="q5" value="2k2"> 2k2 (2,2 kΩ)</label>
+      <label><input type="radio" name="q5" value="3k3"> 3k3 (3,3 kΩ)</label>
     </fieldset>
 
+    <!-- 6 -->
     <fieldset>
-      <legend>6. Resistores</legend>
-      <p>6) O resistor de 3k3 é aplicado em quais zonas?</p>
-      <input type="text" name="q6">
+      <legend>6. Ligações</legend>
+      <p>O resistor deve ser ligado:</p>
+      <label><input type="radio" name="q6" value="Serie"> Em série entre zona e comum</label>
+      <label><input type="radio" name="q6" value="Paralelo"> Em paralelo no sensor</label>
     </fieldset>
 
+    <!-- 7 -->
     <fieldset>
-      <legend>7. Resistores</legend>
-      <p>7) Qual é o código de cores do resistor 2k2?</p>
-      <input type="text" name="q7">
+      <legend>7. Funcionamento</legend>
+      <p>Função dos resistores:</p>
+      <label><input type="radio" name="q7" value="Supervisao"> Supervisão</label>
+      <label><input type="radio" name="q7" value="AumentarTensao"> Aumentar tensão</label>
+      <label><input type="radio" name="q7" value="EnergiaExtra"> Energia extra</label>
     </fieldset>
 
+    <!-- 8 -->
     <fieldset>
-      <legend>8. Resistores</legend>
-      <p>8) O resistor é ligado em qual configuração com a zona?</p>
-      <label><input type="radio" name="q8"> Paralelo</label><br>
-      <label><input type="radio" name="q8"> Série</label><br>
-      <label><input type="radio" name="q8"> Cruzado</label>
+      <legend>8. Active 20</legend>
+      <p>Quantas zonas físicas a central Active 20 possui?</p>
+      <label><input type="radio" name="q8" value="8"> 8 zonas</label>
+      <label><input type="radio" name="q8" value="10"> 10 zonas</label>
+      <label><input type="radio" name="q8" value="20"> 20 zonas</label>
     </fieldset>
 
-    <!-- Perguntas sobre programação Active 20 -->
+    <!-- 9 -->
     <fieldset>
-      <legend>9. Programação Active 20</legend>
-      <p>9) Qual o código da trava de reset?</p>
-      <input type="text" name="q9">
+      <legend>9. Active 100 BUS</legend>
+      <p>O modelo Active 100 BUS pode expandir até:</p>
+      <label><input type="radio" name="q9" value="50"> 50 zonas</label>
+      <label><input type="radio" name="q9" value="75"> 75 zonas</label>
+      <label><input type="radio" name="q9" value="100"> 100 zonas</label>
     </fieldset>
 
+    <!-- 10 -->
     <fieldset>
-      <legend>10. Programação Active 20</legend>
-      <p>10) O tempo de entrada 1 e 2 é configurado nos endereços:</p>
-      <input type="text" name="q10">
+      <legend>10. Sirene</legend>
+      <p>Qual borne geralmente é usado para a sirene?</p>
+      <label><input type="radio" name="q10" value="SA"> SA</label>
+      <label><input type="radio" name="q10" value="ZN"> ZN</label>
+      <label><input type="radio" name="q10" value="COM"> COM</label>
     </fieldset>
 
+    <!-- 11 -->
     <fieldset>
-      <legend>11. Programação Active 20</legend>
-      <p>11) Qual o tempo padrão de saída (códigos 402/412)?</p>
-      <label><input type="radio" name="q11"> 030 seg</label><br>
-      <label><input type="radio" name="q11"> 060 seg</label><br>
-      <label><input type="radio" name="q11"> 120 seg</label>
+      <legend>11. Verdadeiro ou Falso</legend>
+      <p>A Active 20 pode ser armada/desarmada por controle remoto.</p>
+      <label><input type="radio" name="q11" value="Verdadeiro"> Verdadeiro</label>
+      <label><input type="radio" name="q11" value="Falso"> Falso</label>
     </fieldset>
 
+    <!-- 12 -->
     <fieldset>
-      <legend>12. Programação Active 20</legend>
-      <p>12) O código 426 refere-se a:</p>
-      <label><input type="radio" name="q12"> Falta de AC</label><br>
-      <label><input type="radio" name="q12"> Intervalo de ronda</label><br>
-      <label><input type="radio" name="q12"> Expiração de senha</label>
+      <legend>12. Verdadeiro ou Falso</legend>
+      <p>O resistor de 3k3 é usado em todas as zonas.</p>
+      <label><input type="radio" name="q12" value="Verdadeiro"> Verdadeiro</label>
+      <label><input type="radio" name="q12" value="Falso"> Falso</label>
     </fieldset>
 
-    <!-- Perguntas sobre zonas -->
+    <!-- 13 -->
     <fieldset>
-      <legend>13. Programação de Zonas</legend>
-      <p>13) O código para tipo de zona é:</p>
-      <input type="text" name="q13">
+      <legend>13. Instalação</legend>
+      <p>Por que não devemos inverter positivo e negativo na ligação dos sensores?</p>
+      <textarea name="q13" rows="3" required></textarea>
     </fieldset>
 
+    <!-- 14 -->
     <fieldset>
-      <legend>14. Programação de Zonas</legend>
-      <p>14) A zona tipo "10" significa:</p>
-      <label><input type="radio" name="q14"> Imediata</label><br>
-      <label><input type="radio" name="q14"> Entrada/Saída</label><br>
-      <label><input type="radio" name="q14"> Pânico</label>
+      <legend>14. Comunicação</legend>
+      <p>Qual módulo pode ser adicionado para comunicação via aplicativo celular?</p>
+      <label><input type="radio" name="q14" value="Ethernet"> Ethernet</label>
+      <label><input type="radio" name="q14" value="GPRS/GSM"> GPRS/GSM</label>
+      <label><input type="radio" name="q14" value="USB"> USB</label>
     </fieldset>
 
-    <!-- Perguntas sobre usuários -->
+    <!-- 15 -->
     <fieldset>
-      <legend>15. Usuários</legend>
-      <p>15) Qual é o código da senha do mestre?</p>
-      <input type="text" name="q15">
+      <legend>15. Energia</legend>
+      <p>Qual a função da bateria interna?</p>
+      <textarea name="q15" rows="3" required></textarea>
     </fieldset>
 
+    <!-- 16 -->
     <fieldset>
-      <legend>16. Usuários</legend>
-      <p>16) O código 299 corresponde a:</p>
-      <label><input type="radio" name="q16"> Senha do mestre</label><br>
-      <label><input type="radio" name="q16"> Senha do instalador</label><br>
-      <label><input type="radio" name="q16"> Senha do usuário</label>
+      <legend>16. Programação</legend>
+      <p>A zona pode ser programada como:</p>
+      <label><input type="checkbox" name="q16" value="InstFixa"> Instantânea</label>
+      <label><input type="checkbox" name="q16" value="Atraso"> Atraso</label>
+      <label><input type="checkbox" name="q16" value="24h"> 24 horas</label>
     </fieldset>
 
-    <!-- Perguntas sobre RRC-400 -->
+    <!-- 17 -->
     <fieldset>
-      <legend>17. RRC-400</legend>
-      <p>17) Qual a frequência de operação do RRC-400?</p>
-      <input type="text" name="q17">
+      <legend>17. Active 20</legend>
+      <p>Quantos usuários diferentes podem ter senha de acesso?</p>
+      <label><input type="radio" name="q17" value="8"> 8 usuários</label>
+      <label><input type="radio" name="q17" value="20"> 20 usuários</label>
+      <label><input type="radio" name="q17" value="100"> 100 usuários</label>
     </fieldset>
 
+    <!-- 18 -->
     <fieldset>
-      <legend>18. RRC-400</legend>
-      <p>18) Quantos canais de saída o RRC-400 possui?</p>
-      <label><input type="radio" name="q18"> 2</label><br>
-      <label><input type="radio" name="q18"> 4</label><br>
-      <label><input type="radio" name="q18"> 8</label>
+      <legend>18. Active 100 BUS</legend>
+      <p>O sistema BUS permite ligar sensores:</p>
+      <label><input type="radio" name="q18" value="Serial"> Em barramento (serial)</label>
+      <label><input type="radio" name="q18" value="Paralelo"> Em paralelo</label>
     </fieldset>
 
+    <!-- 19 -->
     <fieldset>
-      <legend>19. RRC-400</legend>
-      <p>19) Qual é a memória máxima de controles e sensores?</p>
-      <input type="text" name="q19">
+      <legend>19. Verdadeiro ou Falso</legend>
+      <p>Se o resistor não for usado, a central pode acusar falha na zona.</p>
+      <label><input type="radio" name="q19" value="Verdadeiro"> Verdadeiro</label>
+      <label><input type="radio" name="q19" value="Falso"> Falso</label>
     </fieldset>
 
+    <!-- 20 -->
     <fieldset>
-      <legend>20. RRC-400</legend>
-      <p>20) O jumper JT define:</p>
-      <label><input type="radio" name="q20"> Tempo de retenção</label><br>
-      <label><input type="radio" name="q20"> Frequência</label><br>
-      <label><input type="radio" name="q20"> Endereço IP</label>
+      <legend>20. Dissertativa</legend>
+      <p>Explique com suas palavras a diferença entre as centrais Active 20 e Active 100 BUS.</p>
+      <textarea name="q20" rows="4" required></textarea>
     </fieldset>
 
+    <!-- Enviar -->
     <button type="submit">Enviar Questionário</button>
   </form>
 </body>
