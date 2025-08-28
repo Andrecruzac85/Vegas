@@ -7,7 +7,307 @@
     <title>Aula04</title>
 </head>
 <body>
-    
-    
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Apostila – Câmeras Hikvision • Padrão de Cores com Cabo UTP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+    :root{
+      --ink:#e5e7eb;     /* texto claro */
+      --muted:#9ca3af;   /* cinza para notas */
+      --bg:#0a0a0a;      /* fundo principal */
+      --card:#111827;    /* fundo dos cards/caixas */
+      --brand:#e11d48;   /* destaque rosa/vermelho */
+      --ok:#16a34a;      /* verde */
+      --warn:#f59e0b;    /* amarelo/laranja alerta */
+      --border:#1f2937;  /* bordas discretas */
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      margin:0;
+      line-height:1.6;
+    }
+    .page{
+      max-width: 900px;
+      margin: 32px auto;
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 6px 24px rgba(0,0,0,.5);
+    }
+    header{
+      text-align:center;
+      margin-bottom: 24px;
+    }
+    h1{font-size: 28px; margin: 0 0 8px}
+    h2{font-size: 22px; margin: 24px 0 8px}
+    h3{font-size: 18px; margin: 18px 0 6px}
+    p{margin: 8px 0}
+    .tag{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      background:#3d3f43;
+      color:var(--brand);
+      font-weight:600;
+      font-size:12px;
+      letter-spacing:.3px;
+    }
+    .note{
+      background:#434547;
+      border-left:4px solid var(--brand);
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin: 12px 0;
+      color: var(--muted);
+    }
+    .grid{
+      display:grid;
+      gap:14px;
+    }
+    @media(min-width:840px){ .grid.cols-2{ grid-template-columns: 1fr 1fr; } }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin: 8px 0 16px;
+      font-size: 15px;
+      color: var(--ink);
+    }
+    th, td{
+      border:1px solid var(--border);
+      padding:10px 12px;
+      text-align:left;
+    }
+    th{ background:#111111 }
+    .pair{
+      display:flex; align-items:center; gap:10px;
+      padding:8px 10px; border:1px dashed var(--border);
+      border-radius:10px; background:#1f2937;
+    }
+    .dot{
+      width:14px; height:14px; border-radius:50%;
+      border:2px solid #00000055;
+    }
+    .orange{background:#f97316}
+    .orange-w{background:linear-gradient(90deg,#fff 0 50%, #f97316 50% 100%)}
+    .green{background:#22c55e}
+    .green-w{background:linear-gradient(90deg,#fff 0 50%, #22c55e 50% 100%)}
+    .blue{background:#3b82f6}
+    .blue-w{background:linear-gradient(90deg,#fff 0 50%, #3b82f6 50% 100%)}
+    .brown{background:#8b5e34}
+    .brown-w{background:linear-gradient(90deg,#fff 0 50%, #8b5e34 50% 100%)}
+    code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background:#0f172a; padding:2px 6px; border-radius:6px;
+      color:#facc15;
+    }
+    .wiring{
+      background:#0f172a; color:#e5e7eb; border-radius:12px; padding:14px; overflow:auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px;
+    }
+    .check{color:var(--ok); font-weight:600}
+    .warn{color:var(--warn); font-weight:600}
+    footer{margin-top: 24px; font-size: 12px; color:var(--muted); text-align:center}
+    @media print{
+      body{background:#fff; color:#000}
+      .page{box-shadow:none; border:0; padding:0; margin:0; max-width:100%}
+      .tag{background:#fff; border:1px solid #ddd}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <span class="tag">Hikvision • Cabeamento com UTP</span>
+      <h1>Padrão de Cores e Ligações – Câmeras Hikvision (Cabo UTP)</h1>
+      <p>Guia prático para montagem, identificação de pares e conexões de <strong>vídeo balun</strong> e <strong>P4</strong>.</p>
+    </header>
+
+    <section>
+      <h2>1) Padrão de cores por função</h2>
+      <p>Utilize o padrão abaixo para manter padronização e facilitar manutenções.</p>
+
+      <div class="grid cols-2">
+        <div class="pair">
+          <span class="dot orange"></span>
+          <div><strong>Par Laranja</strong><br><small>Positivo (+) da alimentação</small></div>
+        </div>
+        <div class="pair">
+          <span class="dot brown"></span>
+          <div><strong>Par Marrom</strong><br><small>Negativo (–) / GND da alimentação</small></div>
+        </div>
+        <div class="pair">
+          <span class="dot blue"></span>
+          <div><strong>Azul</strong><br><small>Sinal de vídeo (Câmera 1)</small></div>
+        </div>
+        <div class="pair">
+          <span class="dot blue-w"></span>
+          <div><strong>Branco do Azul</strong><br><small>Comum/retorno do sinal (Câmera 1)</small></div>
+        </div>
+        <div class="pair">
+          <span class="dot green"></span>
+          <div><strong>Verde</strong><br><small>Sinal de vídeo (Câmera 2) <em>ou</em> use para a única câmera</small></div>
+        </div>
+        <div class="pair">
+          <span class="dot green-w"></span>
+          <div><strong>Branco do Verde</strong><br><small>Comum/retorno do sinal (Câmera 2)</small></div>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Dica:</strong> Em instalações com apenas <strong>uma câmera</strong>, utilize o <strong>par verde</strong> (Verde + Branco do Verde) para o sinal de vídeo e mantenha o par azul como reserva.
+      </div>
+    </section>
+
+    <section>
+      <h2>2) Mapeamento rápido do cabo UTP</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Par / Cor</th>
+            <th>Uso</th>
+            <th>Observação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Laranja + Branco/Laranja</td>
+            <td><strong>Alimentação +</strong></td>
+            <td>Positivo (+) do P4/borne</td>
+          </tr>
+          <tr>
+            <td>Marrom + Branco/Marrom</td>
+            <td><strong>Alimentação –</strong></td>
+            <td>Negativo (–) do P4/borne</td>
+          </tr>
+          <tr>
+            <td>Azul</td>
+            <td><strong>Vídeo – Sinal (Cam 1)</strong></td>
+            <td>Conectar ao pino “+ / Video” do balun</td>
+          </tr>
+          <tr>
+            <td>Branco/Azul</td>
+            <td><strong>Vídeo – Comum (Cam 1)</strong></td>
+            <td>Conectar ao pino “– / GND” do balun</td>
+          </tr>
+          <tr>
+            <td>Verde</td>
+            <td><strong>Vídeo – Sinal (Cam 2 ou única)</strong></td>
+            <td>Conectar ao pino “+ / Video” do balun</td>
+          </tr>
+          <tr>
+            <td>Branco/Verde</td>
+            <td><strong>Vídeo – Comum (Cam 2)</strong></td>
+            <td>Conectar ao pino “– / GND” do balun</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>3) Ligação do <em>Vídeo Balun</em></h2>
+      <p>O vídeo balun adapta o sinal da câmera (analógico HD/CVI/TVI) para trafegar pelo par trançado do UTP.</p>
+      <h3>Passo a passo (por câmera)</h3>
+      <ol>
+        <li>Separe um par do UTP para o <strong>sinal</strong> (ex.: <code>Azul</code> = sinal / <code>Branco do Azul</code> = comum).</li>
+        <li>No balun lado <strong>câmera</strong>:
+          <ul>
+            <li>Conecte o fio de <strong>sinal</strong> no borne identificado como <code>Video +</code> (ou “+”).</li>
+            <li>Conecte o fio de <strong>comum</strong> no borne <code>GND / Video –</code> (ou “–”).</li>
+            <li>Conecte o conector <strong>BNC</strong> do balun à câmera (porta <code>VIDEO OUT</code>).</li>
+          </ul>
+        </li>
+        <li>No balun lado <strong>DVR</strong>:
+          <ul>
+            <li>Repita a mesma conexão de polaridade do par escolhido (+ no +, – no –).</li>
+            <li>Ligue o <strong>BNC</strong> do balun na entrada de vídeo correspondente do DVR (ex.: CH1).</li>
+          </ul>
+        </li>
+      </ol>
+
+      <div class="note">
+        <span class="check">✔</span> Mantenha os pares trançados juntos (não misture condutores de pares diferentes).  
+        <br><span class="warn">⚠</span> Em trechos longos, evite passar UTP paralelo a cabos de energia para reduzir ruído.
+      </div>
+    </section>
+
+    <section>
+      <h2>4) Ligação do conector <em>P4</em> (Alimentação)</h2>
+      <p>O P4 é o conector coaxial padrão para 12Vcc. Observe a polaridade:</p>
+
+      <div class="grid cols-2">
+        <div>
+          <h3>Polaridade</h3>
+          <ul>
+            <li><strong>Pino central</strong>: <span class="check">Positivo (+)</span> → <em>Par Laranja</em></li>
+            <li><strong>Bainha externa</strong>: <span class="check">Negativo (–)</span> → <em>Par Marrom</em></li>
+          </ul>
+          <p><strong>Distribuição sugerida</strong> (lado da câmera):</p>
+          <ul>
+            <li><code>Laranja</code> → P4 <strong>+</strong></li>
+            <li><code>Branco/Laranja</code> → P4 <strong>+</strong> (reforço / paralelo)</li>
+            <li><code>Marrom</code> → P4 <strong>–</strong></li>
+            <li><code>Branco/Marrom</code> → P4 <strong>–</strong> (reforço / paralelo)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Procedimento</h3>
+          <ol>
+            <li>Decape 1,0–1,5 cm dos condutores.</li>
+            <li>Estanhe as pontas (opcional, melhora contato em bornes/parafusos).</li>
+            <li>Conecte ao P4 observando <strong>polaridade</strong> (+ no centro / – na carcaça).</li>
+            <li>Teste a tensão na câmera (12Vcc) antes do fechamento.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Atenção:</strong> Use fonte adequada (corrente suficiente para a soma das câmeras). Em distâncias maiores,
+        a queda de tensão pode exigir bitolas maiores ou distribuição de fontes.
+      </div>
+    </section>
+
+    <section>
+      <h2>5) Cenários de uso</h2>
+      <h3>A) Instalação com apenas <em>uma</em> câmera</h3>
+      <ul>
+        <li><strong>Vídeo:</strong> Use <em>par Verde</em> (Verde = +Vídeo / Branco/Verde = –Vídeo).</li>
+        <li><strong>Alimentação:</strong> Par Laranja = +12V / Par Marrom = GND (–).</li>
+        <li><strong>Reserva:</strong> Par Azul permanece livre para futuras expansões.</li>
+      </ul>
+
+      <h3>B) Instalação com <em>duas</em> câmeras no mesmo cabo</h3>
+      <ul>
+        <li><strong>Câmera 1 (vídeo):</strong> Azul = +Vídeo / Branco/Azul = –Vídeo.</li>
+        <li><strong>Câmera 2 (vídeo):</strong> Verde = +Vídeo / Branco/Verde = –Vídeo.</li>
+        <li><strong>Alimentação (ambas):</strong> Laranja = +12V / Marrom = GND (–).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6) Checklist rápido</h2>
+      <ul>
+        <li>Confirmou <strong>polaridade</strong> no P4? (<em>+ no centro</em>, <em>– na carcaça</em>)</li>
+        <li>Manteve os <strong>pares originais</strong> juntos (sinal/comum do mesmo par)?</li>
+        <li>Conectou <strong>Video +</strong> e <strong>Video – (GND)</strong> corretamente nos baluns?</li>
+        <li>Testou continuidade e ausência de curto entre condutores?</li>
+        <li>Verificou se a fonte suporta a corrente total das câmeras?</li>
+      </ul>
+    </section>
+
+    <footer>
+      Apostila – Padrão de Cores e Ligações com UTP para Câmeras Hikvision • © Vegas Vigilância
+    </footer>
+  </div>
 </body>
 </html>
+
+    
+</body>
+</html

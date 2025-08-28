@@ -11,13 +11,34 @@
 <body>
     
     <h1>PROGRAMAÇÃO Active20 JFL</h1><br>
-   <h2>1. Programação dos Tempos e Horários</h2>
+    <div class="section">
+    <h2>2. Programação das Zonas e Usuários</h2>
+    <h3>Zonas</h3>
+    <p><strong>001 a 099</strong> – Tipo da zona (00 Desabilitada, 10 Imediata, 11 Entrada/Saída 1, 12 Entrada/Saída 2, 13 Seguidora, 14 24h, 15 Ronda, 16 Pânico, 19 Tamper)</p>
+    <p><strong>100xx</strong> – Número da partição (01 padrão)"central BUS"</p>
+    <p><strong>101 a 199</strong> – Atributos da zona</p>
+    <h4>ARM A</h4>
+    <p>1 2 3 4Partições A-D,5 Stay,6 Inteligente,7 Silenciosa,8 Auto anulável,9 Permite inibir</p>
+    <h4>ARM B</h4>
+    <p>1 Sirene intermitente,1 Reporta inatividade, Sensibilidade sem fio (2 mín,3 média,4 máx),5 Chime,6 Aviso porta aberta</p>
+    <p><strong>601 a 699</strong> – Nome da zona</p><br>
+
+    <h3>Usuários</h3> <br>
+    <p><strong>200</strong> – Senha do mestre <strong> "numero do cliente"</strong> </p>
+    <p><strong>201 a 298</strong> – Senhas dos usuários</p>
+    <p><strong>299</strong> – Senha do instalador <strong> "5225" </strong> </p>
+    <p><strong>300</strong> – Permissões ( 1 programação,2 arme,3 desarme,4 PGM,5 inibir zonas)</p>
+    <p><strong>301 a 398</strong> – Atributos (armar partições, AWAY, ronda, PGM, eletrificador) <strong>navegar com a seta nas opções e byp para marcar</strong> </p>
+    <p><strong>900 a 998</strong> – Nome dos usuários</p>
+  </div>
+  <br>
+   <h2>1. Programação dos Tempos e Horários</h2> <br>
     <p><strong>400</strong> – Trava de reset — Valor com 3 dígitos. 159 trava, outro valor não trava — Padrão: 000</p>
     <p><strong>401 e 411</strong> – Tempo de entrada 1 e 2 — Valor com 3 dígitos em segundos — Padrão: 060</p>
     <p><strong>402 e 412</strong> – Tempo de saída 1 e 2 — Valor com 3 dígitos em segundos — Padrão: 060</p>
     <p><strong>425</strong> – Tempo de zona inteligente — 060 seg</p>
     <p><strong>426</strong> – Tempo de falta de AC — 001 min</p>
-    <p><strong>427</strong> – Intervalo de autoteste — 000</p>
+    <p><strong>427</strong> – Intervalo de autoteste — 000 <strong>004 padrão</strong> </p>
     <p><strong>428</strong> – Tempo de falta de linha telefônica — 005 min</p>
     <p><strong>429 a 431</strong> – Expiração senhas temporárias — 000 dias</p>
     <p><strong>432</strong> – Intervalo de ronda — 000 min</p>
@@ -30,7 +51,7 @@
     <p><strong>500</strong> – Data/hora automáticas (00 desabilita, 03 Brasília sem horário de verão)</p>
     <p><strong>501</strong> – Hora do alarme — HH:MM:SS</p>
     <p><strong>502</strong> – Data do alarme — DD/MM/AA</p>
-    <p><strong>503</strong> – Primeiro autoteste — HH:MM</p>
+    <p><strong>503</strong> – Primeiro autoteste — HH:MM <strong>numero do cliente ou algo aleatório</strong> </p>
     <p><strong>506/507</strong> – Início/término da ronda — HH:MM</p>
     <p><strong>508/509</strong> – Arme por não movimento — HH:MM</p>
     <p><strong>521 a 524</strong> – Auto arme das partições — HH:MM</p>
@@ -39,61 +60,34 @@
     <p><strong>515 a 518</strong> – Horário acionamento PGM</p>
   </div>
 
-  <!-- PROGRAMAÇÃO DAS ZONAS E USUÁRIOS -->
-  <div class="section">
-    <h2>2. Programação das Zonas e Usuários</h2>
-    <h3>Zonas</h3>
-    <p><strong>001 a 099</strong> – Tipo da zona (00 Desabilitada, 10 Imediata, 11 Entrada/Saída 1, 12 Entrada/Saída 2, 13 Seguidora, 14 24h, 15 Ronda, 16 Pânico, 19 Tamper)</p>
-    <p><strong>100xx</strong> – Número da partição (01 padrão)</p>
-    <p><strong>101 a 199</strong> – Atributos da zona</p>
-
-    <h4>ARM A</h4>
-    <p>Partições A-D, Stay, Inteligente, Silenciosa, Auto anulável, Permite inibir</p>
-    <h4>ARM B</h4>
-    <p>Sirene intermitente, Reporta inatividade, Sensibilidade sem fio (mín, média, máx), Chime, Aviso porta aberta</p>
-    <p><strong>601 a 699</strong> – Nome da zona</p>
-
-    <h3>Usuários</h3>
-    <p><strong>200</strong> – Senha do mestre</p>
-    <p><strong>201 a 298</strong> – Senhas dos usuários</p>
-    <p><strong>299</strong> – Senha do instalador</p>
-    <p><strong>300</strong> – Permissões (programação, arme, desarme, PGM, inibir zonas)</p>
-    <p><strong>301 a 398</strong> – Atributos (armar partições, AWAY, ronda, PGM, eletrificador)</p>
-    <p><strong>900 a 998</strong> – Nome dos usuários</p>
-  </div>
-
   <!-- COMUNICAÇÃO -->
   <div class="section">
     <h2>3. Programação da Comunicação</h2>
-    <p><strong>700</strong> – Opções de reporte (linha, 4G, Ethernet, discadora, SMS, DHCP...)</p>
+    <p><strong>700</strong> – Opções de reporte (2 4G,3 Ethernet,8 modo duplo, 9 DHCP)</p>
     <p><strong>701</strong> – Opções de acesso remoto (SMS, telefone, app, nuvem Ethernet/4G, notificações)</p>
-    <p><strong>702/703</strong> – Endereço IP destino (até 36 caracteres)</p>
-    <p><strong>706/707</strong> – Porta de comunicação IP1/IP2</p>
+    <p><strong>702/703</strong> – Endereço IP destino <strong>vegasvigilancia.ddns.net e vegasvigilancia.dyndns.org</strong></p>
+    <p><strong>706/707</strong> – Porta de comunicação IP1/IP2 <strong>3006 e 3009</strong> </p>
     <p><strong>710</strong> – Notificações (Armes, Desarmes, Alarmes, PGM, Problemas, Eventos)</p>
     <p><strong>720</strong> – Bloqueios do app (problemas, firmware, tarefas)</p>
-    <p><strong>721/731</strong> – PIN SIM card</p>
+    <p><strong>722 a 724</strong> – Apn, Login e Senha  <strong>linksolutions.br,link,link</strong> </p>
     <p><strong>740 a 743</strong> – Rede IP (IP, máscara, gateway, DNS)</p>
     <p><strong>746/747</strong> – Wi-Fi (SSID e senha)</p>
-    <p><em>Exemplo:</em> 702 — vegasvigilancia.ddns.net</p>
     <p><strong>704/705</strong> – Conta das partições</p>
-  </div>
+  </div> <br>
 
   <!-- OPÇÕES GERAIS E TECLADO -->
   <div class="section">
-    <h2>4. Opções Gerais e de Teclado</h2>
+    <h2>4. Opções Gerais e de Teclado</h2> <br>
     <p><strong>800</strong> – Dígito de coação — Padrão: 0</p>
-    <p><strong>801</strong> – Opções gerais (senha 6 dígitos, arme rápido STAY, supervisão teclado, bip sirene, bloquear após 5 erros...)</p>
-    <p><strong>802</strong> – Linha telefônica (pulso, aguardar tom, monitoramento)</p>
+    <p><strong>801</strong> – Opções gerais (1 senha 6 dígitos,2 arme rápido STAY,3 supervisão teclado,4 bip sirene,5 bloquear após 5 erros,6 bip ao armar e desarmar pelo teclado,7 bip aoarmar e desarmar pelo controle,8 bip no teclado confirmar eventos)</p>
     <p><strong>803</strong> – Eventos de reporte (PGM, pânico, programação, ronda, rede IP)</p>
-    <p><strong>804</strong> – Zonas com fio (EOL, tamper, zonas duplas, entrada liga)</p>
-    <p><strong>805</strong> – Pânico (1+3), Emergência médica (4+6), Incêndio (7+9), sirene habilitada</p>
-    <p><strong>806</strong> – Sensores sem fio (falha, tamper, supervisão, inibir desarmado)</p>
-    <p><strong>807</strong> – Barramento (falha, tamper, supervisão)</p>
-    <p><strong>808</strong> – Pânico por app (incêndio, médica, pânico audível)</p>
-    <p><strong>809</strong> – Nível DTMF Contact ID (1 a 4) — Padrão: 3</p>
-    <p><strong>810</strong> – Endereçamento teclados (01 a 04, arme rápido, bips, iluminação, nº zona)</p>
-    <p><strong>811 a 814</strong> – Opções de teclado (PROB/MEM navegação, BYP marcação, ENTER confirmar, partições A-D)</p>
-    <p><strong>815 a 818</strong> – Configurações adicionais de teclado</p> <br>
+    <p><strong>804</strong> – Zonas com fio (1 EOL,2 tamper,3 zonas duplas,4 entrada liga)</p>
+    <p><strong>805</strong> – 1 Pânico (1+3),2 Emergência médica (4+6),3 Incêndio (7+9),4 sirene habilitada</p>
+    <p><strong>806</strong> – Sensores sem fio (1 falha,2 tamper,3 supervisão,4 inibir desarmado)</p>
+    <p><strong>807</strong> – Barramento (1 falha,2 tamper,3 supervisão)</p>
+    <p><strong>810</strong> – Endereçamento teclados (01 a 04)</p>
+    <p><strong>811 a 814</strong> – Opções de teclado (1 partições A-D e 1 a 16 na BUS,2 arme rápido, 3 bip de tempo de ent e saida,4 bip de problema,5 lcd sempre aceso)</p>
+     <p> <strong></strong> </p>
     <img src="./assets/problemas.png" alt=""> <br>
     <img src="./assets/bus1.png" alt="">
     <h1>PROGRAMAÇÃO CENTRAL ACTIVE 100 BUS</h1>
