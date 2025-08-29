@@ -1,61 +1,186 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./aula01.css">
-    <title>aula01</title>
+  <meta charset="utf-8" />
+  <title>Apostila – Aula 01 • Padrão de Cores e Resistores</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --ink:#e5e7eb;     
+      --muted:#9ca3af;   
+      --bg:#0a0a0a;      
+      --card:#2b2c30;    
+      --brand:#e11d48;   
+      --ok:#16a34a;      
+      --warn:#f59e0b;    
+      --border:#1f2937;  
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      margin:0;
+      line-height:1.6;
+    }
+    .page{
+      max-width: 900px;
+      margin: 32px auto;
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 6px 24px rgba(0,0,0,.5);
+    }
+    header{text-align:center;margin-bottom: 24px;}
+    h1{font-size: 28px; margin: 0 0 8px}
+    h2{font-size: 22px; margin: 24px 0 8px}
+    h3{font-size: 18px; margin: 18px 0 6px}
+    p{margin: 8px 0}
+    .tag{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      background:#3d3f43;
+      color:var(--brand);
+      font-weight:600;
+      font-size:12px;
+      letter-spacing:.3px;
+    }
+    .note{
+      background:#434547;
+      border-left:4px solid var(--brand);
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin: 12px 0;
+      color: var(--muted);
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin: 8px 0 16px;
+      font-size: 15px;
+      color: var(--ink);
+    }
+    th, td{
+      border:1px solid var(--border);
+      padding:10px 12px;
+      text-align:left;
+    }
+    th{ background:#111111 }
+    code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background:#0f172a; padding:2px 6px; border-radius:6px;
+      color:#facc15;
+    }
+    .check{color:var(--ok); font-weight:600}
+    .warn{color:var(--warn); font-weight:600}
+    footer{margin-top: 24px; font-size: 12px; color:var(--muted); text-align:center}
+    iframe{border-radius:12px; margin:16px 0; max-width:100%;}
+  </style>
 </head>
-
 <body>
-  <iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/Ncr3BdhpwyI" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-</iframe>
+  <div class="page">
+    <header>
+      <span class="tag">Aula 01 • Sistemas de Alarme</span>
+      <h1>Padrão de Cores e Resistores – Central Active 20</h1>
+      <p>Guia de boas práticas para cabeamento, identificação de zonas e uso de resistores.</p>
+      <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/Ncr3BdhpwyI" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </header>
 
-    <h1>PADRÃO DE CORES</h1>
-    <p>📌 Padrão de Cores – Sistema de Alarme<br><br>
-        Olá, alunos!<br>
-        Nós, técnicos da Vegas, utilizamos um padrão de cores padronizado para todas as ligações, tanto no alarme quanto
-        no CFTV.<br><br>
-        Hoje vamos aprender o padrão aplicado no sistema de alarme:<br><br>
-        Cor do Fio&nbsp;&nbsp;Função&nbsp;&nbsp;Observações<br>
-        🔴 Vermelho&nbsp;&nbsp;Positivo (+)&nbsp;&nbsp;Alimentação da central e dispositivos<br>
-        ⚫ Preto&nbsp;&nbsp;Negativo (–)&nbsp;&nbsp;Retorno da alimentação<br>
-        🟢 Verde ou 🔵 Azul&nbsp;&nbsp;Zona (entrada de sensores)&nbsp;&nbsp;Definir qual zona será utilizada<br>
-        🟡 Amarelo ou ⚪ Branco&nbsp;&nbsp;Comum da Zona&nbsp;&nbsp;Compartilhado entre sensores da mesma zona<br><br>
-        💡 Importante: Sempre siga este padrão para evitar erros de ligação, facilitar futuras manutenções e garantir
-        que qualquer técnico possa identificar a instalação rapidamente.</p>
-    <h1>RESISTORES E LIGAÇÃO DAS ZONAS</h1>
-    <p>📌 Ligação com Resistores na Central Active 20 – Código de Cores<br><br>
-Na Active 20, utilizamos resistores para a identificação das zonas e para garantir a supervisão dos sensores.<br>
-O padrão é:<br><br>
-Zonas baixas (Zona 1 a Zona 9) → Resistor 2k2 (2,2 kΩ)<br>
-Zonas altas (Zona 11 a Zona 19) → Resistor 3k3 (3,3 kΩ)<br><br>
-🎯 Código de Cores dos Resistores<br><br>
-1. Resistor 2k2 (2.200 Ω – tolerância 5%)<br>
-🔴Vermelho (2)<br>
-🔴Vermelho (2)<br>
-🔴Vermelho (multiplicador × 100)<br>
-🟡Dourado (tolerância ±5%)<br><br>
-2. Resistor 3k3 (3.300 Ω – tolerância 5%)<br>
-🟠Laranja (3)<br>
-🟠Laranja (3)<br>
-🔴Vermelho (multiplicador × 100)<br>
-🟡Dourado (tolerância ±5%)<br><br>
-💡 Como funciona na prática<br><br>
-O resistor é ligado em série com o fio da zona e o comum.<br>
-Para zonas de 1 a 9, usa-se 2k2.<br>
-Para zonas de 11 a 19, usa-se 3k3.<br>
-Esse padrão ajuda a central a identificar se a zona está aberta, fechada ou em curto-circuito.
-</p>
-<br><br>
-<img src="./assets/resistores.jpg" alt="resistores">
-    
+    <section>
+      <h2>1) Padrão de cores no sistema de alarme</h2>
+      <p>Utilizamos um padrão padronizado para alimentação e zonas. Isso facilita futuras manutenções.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Cor do Fio</th>
+            <th>Função</th>
+            <th>Observações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🔴 Vermelho</td>
+            <td><strong>Positivo (+)</strong></td>
+            <td>Alimentação da central e dispositivos</td>
+          </tr>
+          <tr>
+            <td>⚫ Preto</td>
+            <td><strong>Negativo (–)</strong></td>
+            <td>Retorno da alimentação</td>
+          </tr>
+          <tr>
+            <td>🟢 Verde ou 🔵 Azul</td>
+            <td><strong>Zona (entrada de sensores)</strong></td>
+            <td>Definir qual zona será utilizada</td>
+          </tr>
+          <tr>
+            <td>🟡 Amarelo ou ⚪ Branco</td>
+            <td><strong>Comum da Zona</strong></td>
+            <td>Compartilhado entre sensores da mesma zona</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>Importante:</strong> Sempre siga este padrão para evitar erros de ligação e garantir que qualquer técnico possa identificar a instalação rapidamente.
+      </div>
+    </section>
+
+    <section>
+      <h2>2) Resistores e ligação das zonas</h2>
+      <p>Na central <strong>Active 20</strong>, utilizamos resistores para supervisão de zonas. O padrão é:</p>
+      <ul>
+        <li>Zonas baixas (1 a 9) → <code>Resistor 2k2</code></li>
+        <li>Zonas altas (11 a 19) → <code>Resistor 3k3</code></li>
+      </ul>
+
+      <h3>Código de cores dos resistores</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Resistor</th>
+            <th>Faixas de Cor</th>
+            <th>Tolerância</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2k2 (2.200 Ω)</td>
+            <td>🔴 Vermelho – 🔴 Vermelho – 🔴 Vermelho (×100)</td>
+            <td>🟡 Dourado (±5%)</td>
+          </tr>
+          <tr>
+            <td>3k3 (3.300 Ω)</td>
+            <td>🟠 Laranja – 🟠 Laranja – 🔴 Vermelho (×100)</td>
+            <td>🟡 Dourado (±5%)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        O resistor é ligado <strong>em série</strong> com o fio da zona e o comum.  
+        <br>Isso permite que a central identifique se a zona está <em>aberta</em>, <em>fechada</em> ou em <em>curto</em>.
+      </div>
+    </section>
+
+    <section>
+      <h2>3) Ilustração prática</h2>
+      <p>Exemplo visual dos resistores usados:</p>
+      <img src="./assets/resistores.jpg" alt="Resistores de 2k2 e 3k3" style="max-width:100%;border-radius:12px;">
+    </section>
+
+    <footer>
+      Apostila – Aula 01 • Padrão de Cores e Resistores no Sistema de Alarme • © Vegas Vigilância
+    </footer>
+  </div>
 </body>
-
 </html>
