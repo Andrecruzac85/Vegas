@@ -1,85 +1,151 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <title>Apostila Active20 JFL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root{
-      --ink:#e5e7eb;     /* texto claro */
-      --muted:#9ca3af;   /* cinza para notas */
-      --bg:#0a0a0a;      /* fundo principal */
-      --card:#2b2c30;    /* fundo dos cards/caixas */
-      --brand:#00c3ff;   /* azul destaque */
-      --ok:#16a34a;      /* verde */
-      --warn:#f59e0b;    /* amarelo alerta */
-      --border:#1f2937;  /* bordas discretas */
+    :root {
+      --ink: #e5e7eb;
+      /* texto claro */
+      --muted: #9ca3af;
+      /* cinza para notas */
+      --bg: #0a0a0a;
+      /* fundo principal */
+      --card: #2b2c30;
+      /* fundo dos cards/caixas */
+      --brand: #00c3ff;
+      /* azul destaque */
+      --ok: #16a34a;
+      /* verde */
+      --warn: #f59e0b;
+      /* amarelo alerta */
+      --border: #1f2937;
+      /* bordas discretas */
     }
-    *{box-sizing:border-box}
-    body{
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:var(--bg);
-      color:var(--ink);
-      margin:0;
-      line-height:1.6;
+      background: var(--bg);
+      color: var(--ink);
+      margin: 0;
+      line-height: 1.6;
     }
-    .page{
+
+    .page {
       max-width: 900px;
       margin: 32px auto;
       background: var(--card);
-      border:1px solid var(--border);
+      border: 1px solid var(--border);
       border-radius: 16px;
       padding: 32px;
-      box-shadow: 0 6px 24px rgba(0,0,0,.5);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .5);
     }
-    header{
-      text-align:center;
+
+    header {
+      text-align: center;
       margin-bottom: 24px;
     }
-    h1{font-size: 28px; margin: 0 0 8px; color:var(--brand)}
-    h2{font-size: 22px; margin: 24px 0 8px; color:var(--brand)}
-    h3{font-size: 18px; margin: 18px 0 6px; color:var(--brand)}
-    h4{font-size: 16px; margin: 12px 0 6px; color:var(--brand)}
-    p{margin: 6px 0}
-    strong{color:#ffcc00}
-    .note{
-      background:#434547;
-      border-left:4px solid var(--brand);
+
+    h1 {
+      font-size: 28px;
+      margin: 0 0 8px;
+      color: var(--brand)
+    }
+
+    h2 {
+      font-size: 22px;
+      margin: 24px 0 8px;
+      color: var(--brand)
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 18px 0 6px;
+      color: var(--brand)
+    }
+
+    h4 {
+      font-size: 16px;
+      margin: 12px 0 6px;
+      color: var(--brand)
+    }
+
+    p {
+      margin: 6px 0
+    }
+
+    strong {
+      color: #ffcc00
+    }
+
+    .note {
+      background: #434547;
+      border-left: 4px solid var(--brand);
       padding: 10px 12px;
       border-radius: 8px;
       margin: 12px 0;
       color: var(--muted);
     }
-    img{
-      max-width:100%; height:auto;
-      margin:12px 0; border-radius:12px;
-      border:2px solid var(--brand);
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 12px 0;
+      border-radius: 12px;
+      border: 2px solid var(--brand);
     }
-    footer{margin-top: 24px; font-size: 12px; color:var(--muted); text-align:center}
-    @media print{
-      body{background:#fff; color:#000}
-      .page{box-shadow:none; border:0; padding:0; margin:0; max-width:100%}
+
+    footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        color: #000
+      }
+
+      .page {
+        box-shadow: none;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        max-width: 100%
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <header>
       <span class="tag">Active20 JFL • Guia Técnico</span>
       <h1>APOSTILA DE PROGRAMAÇÃO – Active20 JFL</h1>
-      <p>Resumo prático dos principais <strong>códigos de programação</strong>, tempos, zonas, usuários e comunicação da central Active20.</p>
+      <p>Resumo prático dos principais <strong>códigos de programação</strong>, tempos, zonas, usuários e comunicação da
+        central Active20.</p>
     </header>
 
     <section>
       <h2>1) Programação das Zonas e Usuários</h2>
       <h3>Zonas</h3>
-      <p><strong>001 a 099</strong> – Tipo da zona (00 Desabilitada, 10 Imediata, 11 Entrada/Saída 1, 12 Entrada/Saída 2, 13 Seguidora, 14 24h, 15 Ronda, 16 Pânico, 19 Tamper)</p>
+      <p><strong>001 a 099</strong> – Tipo da zona (00 Desabilitada, 10 Imediata, 11 Entrada/Saída 1, 12 Entrada/Saída
+        2, 13 Seguidora, 14 24h, 15 Ronda, 16 Pânico, 19 Tamper)</p>
       <p><strong>100xx</strong> – Número da partição (01 padrão) "central BUS"</p>
       <p><strong>101 a 199</strong> – Atributos da zona</p>
       <h4>ARM A</h4>
       <p>1 2 3 4 Partições A-D, 5 Stay, 6 Inteligente, 7 Silenciosa, 8 Auto anulável, 9 Permite inibir</p>
       <h4>ARM B</h4>
-      <p>1 Sirene intermitente, 1 Reporta inatividade, Sensibilidade sem fio (2 mín, 3 média, 4 máx), 5 Chime, 6 Aviso porta aberta</p>
+      <p>1 Sirene intermitente, 1 Reporta inatividade, Sensibilidade sem fio (2 mín, 3 média, 4 máx), 5 Chime, 6 Aviso
+        porta aberta</p>
       <p><strong>601 a 699</strong> – Nome da zona</p>
 
       <h3>Usuários</h3>
@@ -137,7 +203,8 @@
     <section>
       <h2>4) Opções Gerais e de Teclado</h2>
       <p><strong>800</strong> – Dígito de coação (0 padrão)</p>
-      <p><strong>801</strong> – Opções gerais (senha 6 dígitos, arme rápido, supervisão teclado, bips, bloqueio após erros...)</p>
+      <p><strong>801</strong> – Opções gerais (senha 6 dígitos, arme rápido, supervisão teclado, bips, bloqueio após
+        erros...)</p>
       <p><strong>803</strong> – Eventos de reporte (PGM, pânico, ronda, rede IP)</p>
       <p><strong>804</strong> – Zonas com fio (1 EOL, 2 Tamper, 3 zonas duplas)</p>
       <p><strong>805</strong> – Pânico (1+3), Médica (4+6), Incêndio (7+9), sirene habilitada</p>
@@ -145,6 +212,82 @@
       <p><strong>807</strong> – Barramento (falha, tamper, supervisão)</p>
       <p><strong>810</strong> – Endereçamento teclados (01 a 04)</p>
       <p><strong>811 a 814</strong> – Opções de teclado (partições, arme rápido, bips...)</p>
+      <section>
+        <h2>5) Programações Variadas</h2>
+
+        <h3>821 a 824 – Programação das saídas PGM</h3>
+        <p><strong>00</strong> – Desabilitada</p>
+        <p><strong>01</strong> – Aciona junto com a sirene</p>
+        <p><strong>02 a 04</strong> – Sirene para partição B, C e D</p>
+        <p><strong>05</strong> – Aciona junto com arme total</p>
+        <p><strong>06 a 09</strong> – Aciona junto com o arme da partição</p>
+        <p><strong>10</strong> – Aciona quando houver problema técnico</p>
+        <p><strong>11</strong> – Aciona quando houver intrusão</p>
+        <p><strong>12</strong> – Com retenção acionada pelo usuário</p>
+        <p><strong>13</strong> – Sem retenção acionada pelo usuário</p>
+        <p><strong>14</strong> – Aciona sem retenção quando ocorre fogo</p>
+        <p><strong>15</strong> – Aciona sem retenção quando ocorre pânico</p>
+        <p><strong>16</strong> – Aciona sem retenção do disparo da zona 1</p>
+        <p><strong>17</strong> – Aciona sem retenção do disparo da zona 2</p>
+        <p><strong>18</strong> – Aciona para arme e desarme do sistema</p>
+        <p><strong>19 a 21</strong> – Aciona sem retenção do disparo da zona 2 a 4</p>
+        <p><strong>22</strong> – Aciona sem retenção no disparo do sensor sem fio</p>
+        <p><strong>23</strong> – Aciona quando ocorre disparo com duração 24h</p>
+        <p><strong>24</strong> – Aciona junto ao armar e abrir Zona 1</p>
+        <p><strong>25</strong> – Acionar para desarmar e acionar teclado silencioso</p>
+
+        <h3>831 e 832 – Mensagem 1 e 2 do LCD</h3>
+        <p>VEGAS VIGILANCIA e 0800 0522 555</p>
+
+        <h3>840 – Número de Partições</h3>
+        <p>active 20 <strong>2</strong>, active 32 <strong>4</strong>, active 100 bus <strong>16</strong> </p>
+
+        <h3>841 a 844 – Nome das Partições</h3>
+        <p><strong>841xx para Active 100 Bus</strong> – Escrever o nome da partição</p>
+        <p><strong>TECLA1</strong> – Partição A</p>
+        <p><strong>TECLA2</strong> – Partição B</p>
+        <p><strong>TECLA3</strong> – Partição C</p>
+        <p><strong>TECLA4</strong> – Partição D</p>
+   
+
+        <h3>861 a 864 – Nome das Saídas PGM</h3>
+        <p><strong>861xx para Active 100 Bus</strong> – Escrever o nome da PGM</p>
+
+        <h3>881 – Modo de Supervisão dos Sensores sem Fio</h3>
+        <p><strong>00</strong> – Econômico</p>
+        <p><strong>01</strong> – Equilibrado</p>
+        <p><strong>02</strong> – Desempenho</p>
+
+        <h3>882 – Número do Cartão de Comunicação sem Fio</h3>
+        <p><strong>01 a 13</strong></p>
+
+        <h3>883 – Aprender Dispositivo sem Fio</h3>
+        <p>Digitar o número do sensor até 32 ou pressionar <strong>ARM A</strong> para gravar, em seguida acione o
+          dispositivo.</p>
+
+        <h3>884 – Apagar Dispositivo sem Fio</h3>
+        <p>Escolher número do dispositivo para apagar ou digitar 000 para apagar todos.</p>
+
+        <h3>885 – Função das Teclas do Controle Remoto</h3>
+        <p>Após entrar no endereço, digite o número do controle e pressione a tecla que deseja programar.</p>
+
+        <h3>886 – Aprender Dispositivos de Barramento</h3>
+        <p>Valor do número de série dos dispositivos. Após conectar ao barramento, pressione <strong>ARM A</strong> para
+          aprender.</p>
+
+        <h3>887 – Apagar Dispositivos de Barramento</h3>
+        <p>Escolher endereço ou digitar 000 para apagar todos.</p>
+
+        <h3>891 a 898 – Visualizações</h3>
+        <p><strong>891</strong> – Visualizar IMEI (Exibe o número IMEI)</p>
+        <p><strong>892</strong> – Visualizar versão teclado</p>
+        <p><strong>893</strong> – Visualizar versão do local</p>
+        <p><strong>894</strong> – Ver modelo do módulo 4G (Exibe modelo e versão)</p>
+        <p><strong>895</strong> – Ver modelo do módulo Ethernet (Exibe modelo e versão)</p>
+        <p><strong>896</strong> – Visualizar número de série da central</p>
+        <p><strong>897</strong> – Ver número de dispositivos sem fio aprendidos</p>
+        <p><strong>898</strong> – Ver número de dispositivos de barramento aprendidos</p>
+      </section>
 
       <img src="./assets/problemas.png" alt="Tela de problemas">
       <img src="./assets/bus1.png" alt="Barramento BUS">
@@ -158,5 +301,5 @@
     </footer>
   </div>
 </body>
-</html>
 
+</html>
