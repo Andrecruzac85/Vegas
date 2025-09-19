@@ -1,95 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <title>Apostila – Aula 01 • Padrão de Cores e Resistores</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root{
-      --ink:#e5e7eb;     
-      --muted:#9ca3af;   
-      --bg:#0a0a0a;      
-      --card:#2b2c30;    
-      --brand:#e11d48;   
-      --ok:#16a34a;      
-      --warn:#f59e0b;    
-      --border:#1f2937;  
+    :root {
+      --ink: #e5e7eb;
+      --muted: #9ca3af;
+      --bg: #0a0a0a;
+      --card: #2b2c30;
+      --brand: #e11d48;
+      --ok: #16a34a;
+      --warn: #f59e0b;
+      --border: #1f2937;
     }
-    *{box-sizing:border-box}
-    body{
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:var(--bg);
-      color:var(--ink);
-      margin:0;
-      line-height:1.6;
+      background: var(--bg);
+      color: var(--ink);
+      margin: 0;
+      line-height: 1.6;
     }
-    .page{
+
+    .page {
       max-width: 900px;
       margin: 32px auto;
       background: var(--card);
-      border:1px solid var(--border);
+      border: 1px solid var(--border);
       border-radius: 16px;
       padding: 32px;
-      box-shadow: 0 6px 24px rgba(0,0,0,.5);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .5);
     }
-    header{text-align:center;margin-bottom: 24px;}
-    h1{font-size: 28px; margin: 0 0 8px}
-    h2{font-size: 22px; margin: 24px 0 8px}
-    h3{font-size: 18px; margin: 18px 0 6px}
-    p{margin: 8px 0}
-    .tag{
-      display:inline-block;
-      padding:4px 10px;
-      border-radius:999px;
-      background:#3d3f43;
-      color:var(--brand);
-      font-weight:600;
-      font-size:12px;
-      letter-spacing:.3px;
+
+    header {
+      text-align: center;
+      margin-bottom: 24px;
     }
-    .note{
-      background:#434547;
-      border-left:4px solid var(--brand);
+
+    h1 {
+      font-size: 28px;
+      margin: 0 0 8px
+    }
+
+    h2 {
+      font-size: 22px;
+      margin: 24px 0 8px
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 18px 0 6px
+    }
+
+    p {
+      margin: 8px 0
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #3d3f43;
+      color: var(--brand);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+
+    .note {
+      background: #434547;
+      border-left: 4px solid var(--brand);
       padding: 10px 12px;
       border-radius: 8px;
       margin: 12px 0;
       color: var(--muted);
     }
-    table{
-      width:100%;
-      border-collapse:collapse;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
       margin: 8px 0 16px;
       font-size: 15px;
       color: var(--ink);
     }
-    th, td{
-      border:1px solid var(--border);
-      padding:10px 12px;
-      text-align:left;
+
+    th,
+    td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
     }
-    th{ background:#111111 }
-    code{
+
+    th {
+      background: #111111
+    }
+
+    code {
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      background:#0f172a; padding:2px 6px; border-radius:6px;
-      color:#facc15;
+      background: #0f172a;
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: #facc15;
     }
-    .check{color:var(--ok); font-weight:600}
-    .warn{color:var(--warn); font-weight:600}
-    footer{margin-top: 24px; font-size: 12px; color:var(--muted); text-align:center}
-    iframe{border-radius:12px; margin:16px 0; max-width:100%;}
+
+    .check {
+      color: var(--ok);
+      font-weight: 600
+    }
+
+    .warn {
+      color: var(--warn);
+      font-weight: 600
+    }
+
+    footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center
+    }
+
+    iframe {
+      border-radius: 12px;
+      margin: 16px 0;
+      max-width: 100%;
+    }
   </style>
 </head>
+
 <body>
   <div class="page">
     <header>
       <span class="tag">Aula 01 • Sistemas de Alarme</span>
       <h1>Padrão de Cores e Resistores – Central Active 20</h1>
       <p>Guia de boas práticas para cabeamento, identificação de zonas e uso de resistores.</p>
-      <iframe width="560" height="315" 
-        src="https://www.youtube.com/embed/Ncr3BdhpwyI" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Ncr3BdhpwyI" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
       </iframe>
     </header>
@@ -131,7 +184,8 @@
       </table>
 
       <div class="note">
-        <strong>Importante:</strong> Sempre siga este padrão para evitar erros de ligação e garantir que qualquer técnico possa identificar a instalação rapidamente.
+        <strong>Importante:</strong> Sempre siga este padrão para evitar erros de ligação e garantir que qualquer
+        técnico possa identificar a instalação rapidamente.
       </div>
     </section>
 
@@ -167,8 +221,9 @@
       </table>
 
       <div class="note">
-        O resistor é ligado <strong>em série</strong> com o fio da zona e o comum.  
-        <br>Isso permite que a central identifique se a zona está <em>aberta</em>, <em>fechada</em> ou em <em>curto</em>.
+        O resistor é ligado <strong>em série</strong> com o fio da zona e o comum.
+        <br>Isso permite que a central identifique se a zona está <em>aberta</em>, <em>fechada</em> ou em
+        <em>curto</em>.
       </div>
     </section>
 
@@ -178,9 +233,112 @@
       <img src="./assets/resistores.jpg" alt="Resistores de 2k2 e 3k3" style="max-width:100%;border-radius:12px;">
     </section>
 
-    <footer>
-      Apostila – Aula 01 • Padrão de Cores e Resistores no Sistema de Alarme • © Vegas Vigilância
-    </footer>
-  </div>
+    <div class="wrapper">
+      <header>
+        <div>
+          <h1>Guia prático — Instalação de Detectores PIR (Infravermelho) e Micro-ondas</h1>
+          <p class="lead">Explicação técnica, alturas recomendadas, cuidados e esquemas (planta baixa) demonstrativos —
+            tudo em um único arquivo HTML.</p>
+        </div>
+      </header>
+
+
+      <div class="grid">
+        <main class="card">
+          <h2>Resumo rápido (altura e posições)</h2>
+          <div class="spec">
+            <strong>Altura recomendada de instalação:</strong> <br> <strong>2,2 m a 2,4 m</strong> acima do piso
+            (interno e externo na maioria dos casos).<br>
+            <strong>Posição ideal:</strong> em cantos para PIR; em paredes laterais ou cantos com visão desobstruída
+            para micro-ondas; em áreas externas sempre sob proteção (beiral) e evitando incidência direta de sol e
+            chuva.
+          </div>
+
+
+          <div class="rule"></div> <br>
+
+          <img src="./assets/pir.png" alt=""> <br>
+
+          <h2>1) Detectores PIR (Infravermelho Passivo)</h2>
+          <p>Detectam variação de calor (radiação infravermelha) causada por seres humanos/animais em movimento. São
+            muito usados em ambientes internos e em áreas externas quando o modelo é específico para isso.</p>
+          <ul>
+            <li><strong>Altura:</strong> 2,2 m — 2,4 m (padrão recomendado pela maioria dos fabricantes).</li>
+            <li><strong>Posição:</strong> preferencialmente no canto superior do cômodo, apontando diagonalmente para a
+              área coberta.</li>
+            <li><strong>Evitar:</strong> janelas, ventilação direta, luminárias com calor intenso, obstáculos como
+              estantes altas na linha de visão.</li>
+            <li><strong>Modelos PET:</strong> escolha se houver animais domésticos — reduz falsos positivos.</li>
+          </ul> <br>
+          <img src="./assets/microondas.png" alt=""> <br>
+
+          <h2>2) Detectores de Micro-ondas</h2>
+          <p>Emitindo ondas de rádio, detectam alterações no campo quando há movimento. Normalmente usados em combinação
+            com PIR (dualtech) para reduzir falsos disparos.</p>
+          <ul>
+            <li><strong>Altura:</strong> 2,2 m — 2,4 m (interno e externo).</li>
+            <li><strong>Cuidado:</strong> atravessam materiais leves (vidro fino, drywall). Evite apontar para áreas
+              externas não desejadas.</li>
+            <li><strong>Ajustes:</strong> regule alcance (sensitivity/range) para evitar detectar movimento além do
+              perímetro.</li>
+          </ul>
+
+
+          <div class="rule"></div>
+
+
+          <h2>3) Boas práticas gerais</h2>
+          <ul>
+            <li>Teste o sensor em horário e condições diferentes (dia, noite, vento) para checar falsos positivos.</li>
+            <li>Use <strong>dualtech</strong> (PIR + micro-ondas) quando possível — ambos precisam concordar para
+              alarmar, reduzindo falsos alarmes.</li>
+            <li>Em área externa, sempre escolha sensores com <code>IP65</code> ou superior para proteção contra poeira e
+              água.</li>
+            <li>Mantenha registros das posições e das configurações (sensibilidade, tempo de alarme) para manutenção
+              futura.</li>
+          </ul>
+
+
+          <div class="rule"></div>
+
+          <h2>4) Checklist rápido antes da finalização</h2>
+          <ul>
+            <li>Altura medido entre 2,2 m e 2,4 m (use nível/altura).</li>
+            <li>Sensor protegido de chuva/sol em áreas externas.</li>
+            <li>Teste de alcance e giro após instalação (modo teste).</li>
+            <li>Registro da posição, modelo e sensibilidade na ficha técnica do local.</li>
+          </ul>
+
+
+        </main>
+
+
+        <aside class="card">
+          <h3>Ferramentas e referências rápidas</h3>
+          <ul>
+            <li>Trena / Nível a laser</li>
+            <li>Multímetro (só para checagem de alimentação)</li>
+            <li>Parafusos e buchas adequados para a superfície</li>
+            <li>Manual do fabricante (sempre seguir especificações do modelo)</li>
+          </ul>
+
+
+
+
+
+          <footer>
+            <small>Feito para facilitar instalações corretas e reduzir falsos alarmes. Sempre confirme com o manual do
+              fabricante e normas locais antes de aplicar configurações finais.</small>
+          </footer>
+      </div>
 </body>
+
+</html>
+
+<footer>
+  Apostila – Aula 01 • Padrão de Cores e Resistores no Sistema de Alarme • © Vegas Vigilância
+</footer>
+</div>
+</body>
+
 </html>
