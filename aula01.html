@@ -321,10 +321,110 @@
             <li>Parafusos e buchas adequados para a superfície</li>
             <li>Manual do fabricante (sempre seguir especificações do modelo)</li>
           </ul>
+          <div class="wrap">
+            <div class="wrap">
+<header>
+
+  <img src="./assets/barreiras.png" alt="barreiras" style="max-width:100%;border-radius:12px;" >
+<div>
+<h1>Guia prático — Instalação de Barreiras Perimetrais</h1>
+<p class="lead">Passo a passo técnico para instalação, alinhamento, fiação e testes de barreiras (infravermelho ativo / barramentos) em sistemas de alarme.</p>
+</div>
+</header>
 
 
+<div class="grid">
+<main class="card">
+<h2>Resumo</h2>
+<div class="spec">
+Barreiras perimetrais são usadas para proteger muros, portões e cercas. Podem ser <strong>infravermelho ativo (IR)</strong>, <strong>micro-ondas</strong> ou <strong>barreiras físicas (barramento)</strong>. Este guia foca em <strong>barreiras IR ativas</strong> e aborda altura, distância, alinhamento, fiação, ajustes e testes.
+</div>
 
 
+<div class="rule"></div>
+
+
+<h2>1) Tipos principais</h2>
+<ul>
+<li><strong>Barreiras IR ativo:</strong> Emissor + receptor em linha de visada. Indicadas para muros, passagens e jardim.</li>
+<li><strong>Barreiras por micro-ondas:</strong> Menos comuns em linha, utilizam feixes de rádio.</li>
+<li><strong>Barramento / fio tensional:</strong> Sensores que detectam vibração/ruptura na cerca.</li>
+</ul>
+
+
+<h2>2) Altura e espaçamento</h2>
+<ul>
+<li><strong>Altura recomendada:</strong> entre <strong>0,8 m e 1,2 m</strong> do piso para feixes baixos (passagem de pessoas). Em muros altos, posicione os cabeços a 0,3–0,6 m do topo do muro para deteção de escalada.</li>
+<li><strong>Espaçamento entre pares:</strong> depende do modelo; tipicamente entre <strong>5 m e 20 m</strong> entre emissor e receptor. Verifique o alcance do fabricante.</li>
+<li><strong>Número de feixes:</strong> quanto mais feixes (multifeixe), menor a chance de intrusão sem detecção — ideal para áreas largas.</li>
+</ul>
+
+
+<h2>3) Alinhamento</h2>
+<p>Alinhamento correto é crítico:</p>
+<ul>
+<li>Use nível a laser ou nível de bolha para garantir que o emissor e receptor estejam na mesma linha horizontal.</li>
+<li>Mantenha linha de visada limpa (sem plantas, ornamentos ou arames obstruindo).</li>
+<li>Evite instalar frente a superfícies altamente reflexivas (espelhos, vidro) que podem refletir o feixe.</li>
+<li>Em locais ventosos, use suportes com amortecimento para evitar deslocamentos por vento.</li>
+</ul>
+
+
+<h2>4) Fiação e alimentação</h2>
+<ul>
+<li><strong>Alimentação:</strong> típica 12 V DC ou 24 V DC — use fonte dedicada quando pares longos exigirem mais corrente.</li>
+<li><strong>Fiação:</strong> cabo par trançado blindado (STP) para o sinal e cabo elétrico apropriado para alimentação; mantenha o cabo de sinal separado de cabos de alta tensão para evitar indução.</li>
+<li><strong>Distância de cabeamento:</strong> para longas distâncias, considere fonte local no receptor para evitar queda de tensão.</li>
+<li><strong>Saídas:</strong> contatos NA/NF ou saída supervisada (EOL / end-of-line resistors) para detecção de fio rompido ou curto — preferível em instalações profissionais.</li>
+</ul>
+
+
+<h2>5) Configuração de zonas e integração</h2>
+<ul>
+<li>Cada par emissor/receptor normalmente corresponde a uma zona. Configure no painel o tipo de zona (perímetro) e o comportamento (instantâneo, atraso, etc.).</li>
+<li>Use supervisão de linha (EOLR) para detectar sabotagem (corte de fio)</li>
+<li>Sistemas avançados permitem zonas lógicas combinadas (ex.: dois pares na mesma zona com lógica AND para reduzir falsos).</li>
+</ul>
+
+
+<div class="rule"></div>
+
+
+<h2>6) Testes e ajuste fino</h2>
+<ul>
+<li>Faça testes com pessoa caminhando em diferentes velocidades e com animais, se houver. Ajuste sensibilidade conforme necessário.</li>
+<li>Teste em diferentes condições climáticas (chuva, vento, noite e dia).</li>
+<li>Verifique LED de alinhamento (se disponível) e use multímetro para checar tensão nas entradas do painel.</li>
+<li>Registre registros de teste: data, hora, resultados (OK/ajustar), alterações de sensibilidade.</li>
+</ul>
+
+
+<h2>7) Manutenção</h2>
+<ul>
+<li>Limpar lentes e janelas do emissor/receptor periodicamente.</li>
+<li>Verificar alinhamento e fixação após eventos climáticos severos.</li>
+<li>Trocar baterias (se houver) e checar fontes.</li>
+</ul>
+
+<h2>8) Checklist rápido</h2>
+<ul>
+<li>Medir e marcar pontos de fixação antes de perfurar.</li>
+<li>Instalar suportes com resistência ao clima em áreas externas.</li>
+<li>Calibrar alinhamento com nível e testar sinal LED.</li>
+<li>Configurar EOL no painel para supervisão e testar corte/curto de fio.</li>
+<li>Documentar: modelo, altura, distância entre pares e resultados de teste.</li>
+</ul>
+<div class="card">
+<h1>Por que a barreira sobre o muro <em>não deve</em> ficar perfeitamente reta</h1>
+<p class="lead">Uma instalação em que todos os emissores e receptores estão alinhados em linha perfeitamente reta ao longo do topo do muro aumenta a chance de falsos disparos causados por animais, reflexos e micro-movimentos. Abaixo explico o porquê e como mitigar.</p>
+<div class="rule"></div>
+<h2>Problemas gerados por um feixe reto em cima do muro</h2>
+<ul>
+<li><strong>Travessia de pequenos animais:</strong> cães, gatos e aves podem atravessar os feixes próximos ao topo do muro e cruzar vários feixes em sequência, gerando alarme.</li>
+<li><strong>Reflexos e superfícies:</strong> superfícies planas e reflexivas no topo do muro podem redirecionar o feixe, criando leituras incorretas no receptor.</li>
+<li><strong>Variações ambientais:</strong> vento movimentando folhagem ou detritos pode gerar interrupções rápidas e repetidas do feixe reto.</li>
+<li><strong>Escalada parcial:</strong> um intruso que sobe com cuidado pode usar sombras e pontos cegos de um arranjo reto para evitar detecção de múltiplos feixes.</li>
+</ul>
 
           <footer>
             <small>Feito para facilitar instalações corretas e reduzir falsos alarmes. Sempre confirme com o manual do
@@ -336,7 +436,7 @@
 </html>
 
 <footer>
-  Apostila – Aula 01 • Padrão de Cores e Resistores no Sistema de Alarme • © Vegas Vigilância
+  Apostila – Aula 01 • Padrão Sistema de Alarme • © Vegas Vigilância
 </footer>
 </div>
 </body>
