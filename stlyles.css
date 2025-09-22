@@ -45,6 +45,7 @@ h1 {
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+    
 }
 
 .buttons a {
@@ -57,6 +58,7 @@ h1 {
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.25);
     transition: background 0.3s ease;
+    
 }
 
 .buttons a:hover {
