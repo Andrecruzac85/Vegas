@@ -77,7 +77,172 @@
 
     <!-- Questões -->
      <!-- 1 -->
-   
+    <!-- 1 -->
+    <fieldset>
+      <legend>1. Padrão de Cores</legend>
+      <p>Qual cor representa o fio **positivo (+)**?</p>
+      <label><input type="radio" name="q1" value="Preto"> Preto</label>
+      <label><input type="radio" name="q1" value="Vermelho"> Vermelho</label>
+      <label><input type="radio" name="q1" value="Amarelo"> Amarelo</label>
+    </fieldset>
+
+    <!-- 2 -->
+    <fieldset>
+      <legend>2. Padrão de Cores</legend>
+      <p>O fio verde ou azul é usado para:</p>
+      <label><input type="radio" name="q2" value="Zona"> Zona (entrada sensor)</label>
+      <label><input type="radio" name="q2" value="Alimentacao"> Alimentação</label>
+      <label><input type="radio" name="q2" value="Sirene"> Sirene</label>
+    </fieldset>
+
+    <!-- 3 -->
+    <fieldset>
+      <legend>3. Padrão de Cores</legend>
+      <p>O fio amarelo ou branco representa:</p>
+      <label><input type="radio" name="q3" value="Comum"> Comum da zona</label>
+      <label><input type="radio" name="q3" value="Positivo"> Positivo</label>
+      <label><input type="radio" name="q3" value="Negativo"> Negativo</label>
+    </fieldset>
+
+    <!-- 4 -->
+    <fieldset>
+      <legend>4. Resistores</legend>
+      <p>Nas zonas baixas (1 a 9), o resistor correto é:</p>
+      <label><input type="radio" name="q4" value="2k2"> 2k2 (2,2 kΩ)</label>
+      <label><input type="radio" name="q4" value="3k3"> 3k3 (3,3 kΩ)</label>
+    </fieldset>
+
+    <!-- 5 -->
+    <fieldset>
+      <legend>5. Resistores</legend>
+      <p>Nas zonas altas (11 a 19), o resistor correto é:</p>
+      <label><input type="radio" name="q5" value="2k2"> 2k2 (2,2 kΩ)</label>
+      <label><input type="radio" name="q5" value="3k3"> 3k3 (3,3 kΩ)</label>
+    </fieldset>
+
+    <!-- 6 -->
+    <fieldset>
+      <legend>6. Ligações</legend>
+      <p>O resistor deve ser ligado:</p>
+      <label><input type="radio" name="q6" value="Serie"> Em série entre zona e comum</label>
+      <label><input type="radio" name="q6" value="Paralelo"> Em paralelo no sensor</label>
+    </fieldset>
+
+    <!-- 7 -->
+    <fieldset>
+      <legend>7. Funcionamento</legend>
+      <p>Função dos resistores:</p>
+      <label><input type="radio" name="q7" value="Supervisao"> Supervisão</label>
+      <label><input type="radio" name="q7" value="AumentarTensao"> Aumentar tensão</label>
+      <label><input type="radio" name="q7" value="EnergiaExtra"> Energia extra</label>
+    </fieldset>
+
+    <!-- 8 -->
+    <fieldset>
+      <legend>8. Active 20</legend>
+      <p>Quantas zonas físicas a central Active 20 possui?</p>
+      <label><input type="radio" name="q8" value="8"> 8 zonas</label>
+      <label><input type="radio" name="q8" value="10"> 10 zonas</label>
+      <label><input type="radio" name="q8" value="20"> 20 zonas</label>
+    </fieldset>
+
+    <!-- 9 -->
+    <fieldset>
+      <legend>9. Active 100 BUS</legend>
+      <p>O modelo Active 100 BUS pode expandir até:</p>
+      <label><input type="radio" name="q9" value="50"> 50 zonas</label>
+      <label><input type="radio" name="q9" value="75"> 75 zonas</label>
+      <label><input type="radio" name="q9" value="99"> 99 zonas</label>
+    </fieldset>
+
+    <!-- 10 -->
+    <fieldset>
+      <legend>10. Sirene</legend>
+      <p>Qual borne geralmente é usado para a sirene?</p>
+      <label><input type="radio" name="q10" value="Sir"> Sir</label>
+      <label><input type="radio" name="q10" value="ZN"> ZN</label>
+      <label><input type="radio" name="q10" value="COM"> COM</label>
+    </fieldset>
+
+    <!-- 11 -->
+    <fieldset>
+      <legend>11. Verdadeiro ou Falso</legend>
+      <p>A Active 20 pode ser armada/desarmada por controle remoto.</p>
+      <label><input type="radio" name="q11" value="Verdadeiro"> Verdadeiro</label>
+      <label><input type="radio" name="q11" value="Falso"> Falso</label>
+    </fieldset>
+
+    <!-- 12 -->
+    <fieldset>
+      <legend>12. Verdadeiro ou Falso</legend>
+      <p>O resistor de 3k3 é usado em todas as zonas.</p>
+      <label><input type="radio" name="q12" value="Verdadeiro"> Verdadeiro</label>
+      <label><input type="radio" name="q12" value="Falso"> Falso</label>
+    </fieldset>
+
+    <!-- 13 -->
+    <fieldset>
+      <legend>13. Instalação</legend>
+      <p>Quais ddns usados nos campo 702 e 703?</p>
+      <textarea name="q13" rows="3" required></textarea>
+    </fieldset>
+
+    <!-- 14 -->
+    <fieldset>
+      <legend>14. Comunicação</legend>
+      <p>Qual módulo pode ser adicionado para comunicação via internet?</p>
+      <label><input type="radio" name="q14" value="Ethernet"> Ethernet</label>
+      <label><input type="radio" name="q14" value="GPRS/GSM"> GPRS/GSM</label>
+      <label><input type="radio" name="q14" value="USB"> USB</label>
+    </fieldset>
+
+    <!-- 15 -->
+    <fieldset>
+      <legend>15. Energia</legend>
+      <p>Quais as portas nos campos 706 e 707?</p>
+      <textarea name="q15" rows="3" required></textarea>
+    </fieldset>
+
+    <!-- 16 -->
+    <fieldset>
+      <legend>16. Programação</legend>
+      <p>Qual intervalo de auto teste:</p>
+      <label><input type="checkbox" name="q16" value="InstFixa"> 12 hs</label>
+      <label><input type="checkbox" name="q16" value="Atraso"> 24 hs</label>
+      <label><input type="checkbox" name="q16" value="24h"> 4 hs</label>
+    </fieldset>
+
+    <!-- 17 -->
+    <fieldset>
+      <legend>17. Active 20</legend>
+      <p> Onde deve ser ultilizado o resistor da sirene?</p>
+      <label><input type="radio" name="q17" value="na sirene"> na sirene</label>
+      <label><input type="radio" name="q17" value="na central"> na central</label>
+      <label><input type="radio" name="q17" value="não é necessário"> não é necessário</label>
+    </fieldset>
+
+    <!-- 18 -->
+    <fieldset>
+      <legend>18. Active 100 BUS</legend>
+      <p>O sistema BUS permite ligar sensores:</p>
+      <label><input type="radio" name="q18" value="Serial"> Em barramento (serial)</label>
+      <label><input type="radio" name="q18" value="Paralelo"> Em paralelo</label>
+    </fieldset>
+
+    <!-- 19 -->
+    <fieldset>
+      <legend>19. Verdadeiro ou Falso</legend>
+      <p>A tensão de alimentação da camera são 12 volts</p>
+      <label><input type="radio" name="q19" value="Verdadeiro"> Verdadeiro</label>
+      <label><input type="radio" name="q19" value="Falso"> Falso</label>
+    </fieldset>
+
+    <!-- 20 -->
+    <fieldset>
+      <legend>20. Dissertativa</legend>
+      <p>Explique com suas palavras como se liga uma camera.</p>
+      <textarea name="q20" rows="4" required></textarea>
+    </fieldset>
 
     <input type="hidden" name="nota_final" id="nota_final">
     <!-- Enviar -->
